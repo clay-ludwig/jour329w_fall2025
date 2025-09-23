@@ -37,7 +37,7 @@ I chose this story to read for the tag "Chris Van Hollen": https://cnsmaryland.o
 
 I ran this command:
 ```{bash}
-uv run python -m newspaper --url=YOUR_URL -of=text | llm -m groq/moonshotai/kimi-k2-instruct-0905 "You are an expert at categorizing topics for news stories. Read the text and provide no more than 5 topics."
+uv run python -m newspaper --url="https://cnsmaryland.org/2025/04/18/returning-from-el-salvador-van-hollen-says-we-need-to-bring-mr-abrego-garcia-home/" -of=text | llm -m groq/moonshotai/kimi-k2-instruct-0905 "You are an expert at categorizing topics for news stories. Read the text and provide no more than 5 topics."
 ```
 
 Here's the exact output of this command:
