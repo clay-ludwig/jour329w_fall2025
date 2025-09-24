@@ -87,6 +87,8 @@ This is a much better response from the LLM, but there are still several things 
 - CECOT
 - Due process
 
+(I hope it's okay that I'm allowing more than two words for proper nouns - it felt weird having only people's last names or abbreviated versions of places.)
+
 ## Attempt 3
 **Command:**
 ```{bash}
@@ -129,7 +131,7 @@ Trump administration
 ```
 
 **Evaluation:**
-This output is better, but now there are weirdly more than 5 tags. I'm going to make my prompt more clearly outline the need for 5 tags, asking it to number each one. I also am going to try changing the formatting to be more markdown-y, since LLMs usually have an easy time understanding markdown and my prompt is a little long.
+This output is better, but now there are weirdly more than 5 tags. I'm going to make my prompt more clearly outline the need for 5 tags, asking it to number each one. I also am going to try changing the formatting to be more structured and markdown-y, since LLMs usually have an easy time understanding markdown and my prompt is a little long.
 
 ## Attempt 5
 **Command:**
@@ -178,7 +180,7 @@ uv run python -m newspaper --url="https://cnsmaryland.org/2025/04/18/returning-f
 ```
 
 **Evaluation:**
-Same problem as last time, so I'm going to adjust the prompt again to be even clearer with a section specifically for proper nouns.
+Same problem as last time, even though I tried adding some clarifications to the prompt. I'm going to adjust the prompt again to be even clearer with a section specifically for proper nouns.
 
 ## Attempt 7
 **Command:**
@@ -210,7 +212,7 @@ uv run python -m newspaper --url="https://cnsmaryland.org/2025/04/18/returning-f
 **Evaluation:**
 🥳 I had no idea you could put emojis in VS code—wild!
 
-Anyways, it worked! I broke off proper noun rules into their own section, since there became enough rules to warrant one. I also subtly improved the wording for some parts of the prompt, like clarifying that tags should each only encompass one topic within the article. These changes seemed to work and I'm happy with the tags it provided.
+It worked! I broke off proper noun rules into their own section, since there became enough rules to warrant one. I also subtly improved the wording for some parts of the prompt, like clarifying that tags should each only encompass one topic within the article. These changes seemed to work and I'm happy with the tags it provided.
 
 Just to be safe, I also tried the prompt with this article: https://cnsmaryland.org/2024/02/08/the-law-is-clear-crowd-urges-supreme-court-to-rule-against-trump-in-ballot-case/, and its output was the following:
 ```
@@ -224,10 +226,10 @@ Just to be safe, I also tried the prompt with this article: https://cnsmaryland.
 Another totally acceptable response, in my opinion.
 
 ## Conclusions
-This admittedly took more work than I expected. The immediate takeaway is that prompt engineering takes multiple attempts, and you need to—at least partially— understand how LLMs work to properly iterate. For example, I subtly tweaked my final prompt to specify exactly what I meant by "proper nouns." To do this, I included the phrase "people and places," since I was beginning to suspect the LLM may not actually *know* what I intended when using the phrase "proper noun." Properly evaluating details like these for potentially confusing instructions is important because it can save a lot of repetitive calls (and therefore time and money).
+This admittedly took more work than I expected. The immediate takeaway is that prompt engineering takes multiple attempts, and you need to—at least partially— understand how LLMs work to properly iterate your prompts. For example, I subtly tweaked my final prompt to specify exactly what I meant by "proper nouns." To do this, I included the phrase "people and places," since I was beginning to suspect the LLM may not actually *know* what definition I intended when using the phrase "proper noun." Early on, I also told the LLM to number its tags when I noticed it responding with more than 5 because I knew it would help it track its own work, in some ways. Properly evaluating details like these is important because it can save a lot of repetitive calls to the model (and therefore time and money).
 
-I also believe the formatting of prompts really matters. Writing the prompts in markdown seemed to immediately improve the model's ability to follow instructions. It also has the added benefits of being prettier to human eyes, and presumably the ability to pipe in a .md file into the model as its prompt, rather than writing it entirely in the command itself.
+I also believe the formatting of prompts really matters. Writing the prompts in markdown seemed to immediately improve the model's ability to follow instructions. It also has the added benefits of being prettier to human eyes, and presumably having the ability to pipe in a .md file into the model as its prompt, rather than writing it entirely in the command itself.
 
-This was definitely a challenge—one of the ideas I had for speeding this process up was giving *another* LLM the first model's output, and having the second model compare the first's outputted tags with the guidelines I wrote—essentially acting as a "check" on the first model's response that would catch errors. I'd imagine this approach would only make sense, though, if we were optimizing for high accuracy and didn't mind waiting longer and spending more (probably double) the money on each response. For this assignment, it seemed like fixing the original prompt was a smarter use of time.
+This was definitely a challenge—one of the ideas I had for improving this workflow was feeding our model's initial output into *another* LLM, which would then compare the given tags with the guidelines I established—basically acting as a "check" on the first model's response to help catch errors. I'd imagine this approach would only make sense, though, if we were optimizing for higher accuracy and didn't mind waiting longer and spending more (probably double) the money on each tag. For this assignment, it seemed like fixing the original prompt was a smarter use of time.
 
-Another idea I had was to write multiple prompts for each iteration, rather than just one. When adjusting my prompt, I had many ideas for directions I could go in to find the "perfect prompt," and I wished I could run the same LLM several times with each of those ideas to find which ideas it responded to better and how certain differences between prompts shaped its outputs.
+Another idea I had was to write several prompts and make multiple simultaneous model calls to test each iteration, rather than just one at a time. When adjusting my prompt, I had many ideas for directions I could go to make it more effective, and I wished I could run the LLM several times to find which versions it responded to better and how certain differences between prompts affected its outputs.
