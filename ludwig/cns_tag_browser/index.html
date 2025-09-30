@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNS Tag Browser</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <header>
+                <h1>CNS Tag Browser</h1>
+                <div class="controls">
+                    <input type="text" id="searchInput" placeholder="Search tags...">
+                    <span id="tagCount" class="tag-count"></span>
+                </div>
+            </header>
+            
+            <div class="table-container">
+                <table id="tagsTable">
+                    <thead>
+                        <tr>
+                            <th data-column="id" data-sort="none">
+                                ID <span class="sort-indicator"></span>
+                            </th>
+                            <th data-column="count" data-sort="desc">
+                                Count <span class="sort-indicator">▼</span>
+                            </th>
+                            <th data-column="name" data-sort="none">
+                                Name <span class="sort-indicator"></span>
+                            </th>
+                            <th data-column="slug" data-sort="none">
+                                Slug <span class="sort-indicator"></span>
+                            </th>
+                            <th data-column="description" data-sort="none">
+                                Description <span class="sort-indicator"></span>
+                            </th>
+                            <th data-column="taxonomy" data-sort="none">
+                                Taxonomy <span class="sort-indicator"></span>
+                            </th>
+                            <th data-column="link" data-sort="none">
+                                Link <span class="sort-indicator"></span>
+                            </th>
+                            <th data-column="meta" data-sort="none">
+                                Meta <span class="sort-indicator"></span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tagsTableBody">
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="loadingIndicator" class="loading">Loading tags...</div>
+        </div>
+        
+        <!-- Right Sidebar for Chat -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>AI Chat</h2>
+                <button id="toggleSidebar" class="toggle-btn">◀</button>
+            </div>
+            
+            <div class="sidebar-content">
+                <!-- API Key Section -->
+                <div class="api-key-section">
+                    <label for="apiKeyInput">Groq API Key:</label>
+                    <div class="api-key-input-group">
+                        <input 
+                            type="password" 
+                            id="apiKeyInput" 
+                            placeholder="Enter your Groq API key"
+                            autocomplete="off"
+                        >
+                        <button id="saveApiKey" class="btn-save">Save</button>
+                    </div>
+                    <div id="apiKeyStatus" class="api-key-status"></div>
+                </div>
+                
+                <!-- Chat Interface -->
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-welcome">
+                            <p>👋 Welcome to CNS Tag Browser Chat</p>
+                            <p>I'm powered by Groq's GPT-OSS-20B model. Ask me anything!</p>
+                            <p class="chat-hint">💡 Make sure you've saved your API key above</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-composer">
+                        <textarea 
+                            id="chatInput" 
+                            placeholder="Ask me anything..."
+                            rows="1"
+                        ></textarea>
+                        <button id="sendMessage" class="btn-send" title="Send message (Enter)">
+                            <span>Send</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <script src="scripts/app.js"></script>
+</body>
+</html>
