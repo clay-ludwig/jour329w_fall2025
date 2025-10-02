@@ -1,0 +1,10 @@
+CNS Datasette Analysis
+October 1, 2025
+
+---
+
+The most interesting thing I saw doing this was a tag I found called "pink concussions." It turned out to be for a story that mentioned a website called pinkconcussions.com, which belongs to some kind of athlete support group. Very random, but I don't think I would've found this tag if it weren't for the facet function in Datasette. I basically found it by randomly clicking a series of options Datasette provided me. Based on this very brief experience alone, I can see how Datasette can be used to find stories like you explained class today with the fraud example.
+
+The most useful thing I saw while doing this was the fact that we could semantically find stories related to a certain topic. As we saw in class, we can use an embeddings model to help find the IDs of stories that most closely fit a topic, and then use Datasette to actually locate the story and possibly do additional analysis with it. This is super useful since it goes beyond a basic keyword search — it's kind of combining the best of what LLMs are capable of (semantically understanding large amounts of data) and the best of more deterministic tools like Datasette and SQL. I will admit, I still don't fully understanding embeddings, but I at least understand how they can be used and I see their power for reporters.
+
+Overall, I can see how Datasette is useful but I definitely need to spend more time getting used to it. I may just be tired (I am), but I found the interface to be slightly unintuitive. I can definitely see how it is more powerful than strictly relying on terminal commands, though — being able to visually see a database and navigate through it much better. The fact that you can also share a URL of a certain query to someone else alone makes this tool appealing to me. That feature would primarily be my use case in a newsroom — one person could be tasked with finding data and sending it to others, rather than every reporter having to fetch the same data repeatedly. You could also even store these queries and refer back to them for a story you're currently reporting.
