@@ -55,8 +55,8 @@ Choose a topic from the list that has a good number of stories (aim for at least
 # Replace 'Elections' with your actual topic name as it appears in the data
 uv run sqlite-utils memory ../../data/story_summaries.json \
   "SELECT * FROM story_summaries 
-   WHERE topic = 'Elections'" \
-  --json-cols > story_summaries_elections.json
+   WHERE topic = 'Education'" \
+  --json-cols > story_summaries_education.json
 ```
 
 **Examples for other topics:**
@@ -289,7 +289,7 @@ Do these findings make sense? Document your findings in `notes.md`. What changes
 Take your `enhanced_beat_stories.json` file and `notes.md` evaluation and create a prompt that produces a guide for a reporter assigned to cover stories on that topic. Put that prompt in a file called `prompt.txt`. You can be as detailed as you like in the prompt, and you can revise and re-run it. You will choose the model and replace "REPLACE WITH YOUR MODEL" below with it and then run the command.
 
 ```bash
-cat prompt.txt enhanced_beat_stories.json | uv run llm -m REPLACE WITH YOUR MODEL > prototype.md
+cat prompt.txt enhanced_beat_stories.json | uv run llm -m moonshotai/kimi-k2-instruct-0905 > prototype.md
 ```
 
 ### Evaluation
