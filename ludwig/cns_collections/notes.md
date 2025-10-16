@@ -1,4 +1,4 @@
-CNS Collections - Elections
+CNS Collections - Education
 October 15, 2025
 
 ---
@@ -99,6 +99,24 @@ cat prompt.txt enhanced_beat_stories.json | uv run llm -m claude-3.5-haiku > pro
 ```
 
 I also used Copilot to help me with this prompt - I am pasting the chat transcript at the bottom of this file.
+
+Conclude your `notes.md` with reflection on:
+
+- What did the structured metadata reveal about this beat?
+- Does your `prototype.md` result seem useful? What does it do well and what does it not do well?
+- Did you change your prompt, and if so, how? Did that work better?
+- What would you do differently with more time or data?
+
+## Reflection
+The structured metadata surprisingly revealed a lot about this beat. It allowed me to get a wide (but not very deep) look at what different stories for the education beat involve at CNS. Through facets in Datasette, I was able to get an even clearer idea of what CNS' most and least covered topics are in the education beat.
+
+As for the prototype beat book, I would consider it a failure. It seemed to focus too heavily on a very specific story about the "Blueprint for Maryland's Future." This is almost certainly because I had to cut so many other stories (and their summaries) from the enhanced_beat_stories JSON to properly fit the prompt + json data into Claude's context window limit. Many of the stories at the bottom of the resulting enhanced_beat_stories file were about the "Blueprint for Maryland's Future" topic, which probably made Claude focus too heavily on that. A more useful beat book, I believe, would still give more attention to frequently-covered stories and less to one-offs or otherwise unrelated ones. In this case, Claude definitely focused too heavily on one story.
+
+Putting the obvious failure aside, as a whole, I did like how Claude decided to format the info. in its first draft. It wrote its beat book in markdown and formatted everything into different sections to be easier to skim — I really like this and would like to continue down this path for our real beat book (or at least not force a reporter to read a wall of text). That said, I really think a more interactive beat book would be ideal here, since shortened summaries of things often only create more questions.
+
+I was very stretched for time for this assignment, but if I had more time I would spend more time experimenting with ways to give the LLM the entire context of the CNS education beat without sacrificing on details. One of my ideas was to break the JSON into slices that Claude could interpret and use, collectively, to form one cohesive beat book. I could imagine doing this through some combination of clever prompting and code written to help break the data into chunks and have the LLM process each chunk. One of the challenges with this idea would definitely be having Claude be aware of the info. from other chunks of the JSON — we don't want it to independently process each excerpt of data.
+
+I also didn't have much time to adjust my prompt today — I really wanted to dig into that and spend more time tweaking different things. I relied on LLMs to form my prompt, and while I liked what I saw overall, I would definitely have spent more time tailoring it to this task.
 
 ## Copilot Transcript
 clay-ludwig: Can you help create me a concise but detailed prompt for this? We are basically going to try to explain the ins and outs of a specific reporting beat given metadata from the enhanced_beat_stories file, like it says. We need to give the reporter covering this beat enough detail to know what is required of the beat, while being concise enough to not overwhelm the reporter.
