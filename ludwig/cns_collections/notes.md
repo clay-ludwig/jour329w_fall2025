@@ -100,13 +100,6 @@ cat prompt.txt enhanced_beat_stories.json | uv run llm -m claude-3.5-haiku > pro
 
 I also used Copilot to help me with this prompt - I am pasting the chat transcript at the bottom of this file.
 
-Conclude your `notes.md` with reflection on:
-
-- What did the structured metadata reveal about this beat?
-- Does your `prototype.md` result seem useful? What does it do well and what does it not do well?
-- Did you change your prompt, and if so, how? Did that work better?
-- What would you do differently with more time or data?
-
 ## Reflection
 The structured metadata surprisingly revealed a lot about this beat. It allowed me to get a wide (but not very deep) look at what different stories for the education beat involve at CNS. Through facets in Datasette, I was able to get an even clearer idea of what CNS' most and least covered topics are in the education beat.
 
