@@ -1,0 +1,42 @@
+You are an expert news editor building a compact, actionable beat guide for a reporter. Use the JSON records in enhanced_beat_stories.json and the evaluation notes.md to produce a single Markdown guide that fits on roughly 2–4 pages but is rich with actionable detail.
+
+Requirements:
+- Start with a one-paragraph beat summary (1–3 sentences) that explains the beat's scope and why it matters.
+- Provide a 3-line "daily checklist" of tasks the reporter should perform each workday.
+- List 6–10 prioritized reporting priorities/themes (bulleted), with one sentence explaining why each matters and one data field or metadata facet to watch for (use metadata_people, metadata_geographic_focus, metadata_key_institutions, and any beat_specific_field present in the JSON).
+- Provide a short source map: 8–12 named potential sources or institutions, each with a one-line description of their role and one practical tip on how to contact/monitor them (e.g., public calendar, FOIA office, social feed).
+- Include 4 common story templates the reporter can use (headline + 2–3 bullet lede/angle ideas for each): e.g., watchdog/FOIA, service story, Q&A profile, explainers using data.
+- Provide 5 focused interview questions tailored to the beat and 3 suggested data/records to request (with exact document names or search terms where possible).
+- Offer a 30/60/90-day reporting plan with concrete milestones and suggested sample story ideas keyed to metadata signals.
+- Add 5 short example search/analysis commands the reporter can run locally to reproduce common queries (use sqlite-utils, jq, or simple grep/jq patterns) referencing enhanced_beat_stories.json and the metadata_* fields.
+- Include 3 representative story citations drawn from enhanced_beat_stories.json (title + link if available + one-sentence note on why it’s useful as a model).
+- End with 3 quick tips for verification/ethics/legal issues specific to this beat.
+
+Formatting and style:
+- Output as Markdown with clear section headings and short bullet lists.
+- Keep language concise and actionable; avoid long background essays.
+- If a required metadata field is missing in the dataset, note that and suggest an alternate signal to use.
+- Do not include raw JSON in the guide; reference fields by name only.
+
+Produce the guide now.// filepath: /workspaces/jour329w_fall2025/assignments/cns_collections/prompt.txt
+You are an expert news editor building a compact, actionable beat guide for a reporter. Use the JSON records in enhanced_beat_stories.json and the evaluation notes.md to produce a single Markdown guide that fits on roughly 2–4 pages but is rich with actionable detail.
+
+Requirements:
+- Start with a one-paragraph beat summary (1–3 sentences) that explains the beat's scope and why it matters.
+- Provide a 3-line "daily checklist" of tasks the reporter should perform each workday.
+- List 6–10 prioritized reporting priorities/themes (bulleted), with one sentence explaining why each matters and one data field or metadata facet to watch for (use metadata_people, metadata_geographic_focus, metadata_key_institutions, and any beat_specific_field present in the JSON).
+- Provide a short source map: 8–12 named potential sources or institutions, each with a one-line description of their role and one practical tip on how to contact/monitor them (e.g., public calendar, FOIA office, social feed).
+- Include 4 common story templates the reporter can use (headline + 2–3 bullet lede/angle ideas for each): e.g., watchdog/FOIA, service story, Q&A profile, explainers using data.
+- Provide 5 focused interview questions tailored to the beat and 3 suggested data/records to request (with exact document names or search terms where possible).
+- Offer a 30/60/90-day reporting plan with concrete milestones and suggested sample story ideas keyed to metadata signals.
+- Add 5 short example search/analysis commands the reporter can run locally to reproduce common queries (use sqlite-utils, jq, or simple grep/jq patterns) referencing enhanced_beat_stories.json and the metadata_* fields.
+- Include 3 representative story citations drawn from enhanced_beat_stories.json (title + link if available + one-sentence note on why it’s useful as a model).
+- End with 3 quick tips for verification/ethics/legal issues specific to this beat.
+
+Formatting and style:
+- Output as Markdown with clear section headings and short bullet lists.
+- Keep language concise and actionable; avoid long background essays.
+- If a required metadata field is missing in the dataset, note that and suggest an alternate signal to use.
+- Do not include raw JSON in the guide; reference fields by name only.
+
+Produce the guide now.
