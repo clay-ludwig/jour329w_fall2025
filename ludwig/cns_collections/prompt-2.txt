@@ -1,0 +1,23 @@
+You are an expert news editor building a compact beat guide for a new reporter being onboarded. Analyze the JSON records in enhanced_beat_stories.json and evaluation notes.md to produce a 2-4 page Markdown guide with these sections:
+
+## Structure
+
+1. **Beat Overview** (1 paragraph): Scope and why it matters
+2. **Daily Checklist** (3 tasks): What to do each workday
+3. **Reporting Priorities** (6-10 themes): Each with why it matters + which metadata field to monitor (metadata_people, metadata_geographic_focus, metadata_key_institutions, beat_specific_field)
+4. **Source Map** (8-12 contacts): Name, role, and one practical monitoring tip (calendars, FOIA, social feeds)
+5. **Story Templates** (4 types): Headline + 2-3 lede angles for watchdog, service, profile, data explainer stories
+6. **Reporter Tools**:
+   - 5 interview questions
+   - 3 specific data/records requests
+   - 5 command-line search examples (sqlite-utils, jq, grep) for enhanced_beat_stories.json
+7. **30/60/90-Day Plan**: Concrete milestones and story ideas linked to metadata signals
+8. **Model Stories** (3 examples): Title, link, one-sentence takeaway from the JSON
+9. **Beat-Specific Tips** (3 points): Verification, ethics, legal considerations
+
+## Style
+
+- Actionable and concise
+- Reference metadata fields by name, never paste raw JSON
+- Note missing fields and suggest alternatives
+- Use clear headings and bullet lists
