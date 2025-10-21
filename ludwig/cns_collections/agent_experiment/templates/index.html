@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Book Agent Monitor</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .control-panel {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .status-badge {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+        
+        .status-badge.idle {
+            background: #e0e0e0;
+            color: #666;
+        }
+        
+        .status-badge.running {
+            background: #4caf50;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-badge.completed {
+            background: #2196f3;
+            color: white;
+        }
+        
+        .status-badge.error {
+            background: #f44336;
+            color: white;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        button {
+            padding: 12px 30px;
+            font-size: 1em;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .panel {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .panel h2 {
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .tool-call {
+            background: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .tool-call-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .tool-name {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        .timestamp {
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        .tool-inputs {
+            background: white;
+            padding: 10px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin-top: 5px;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .log-container {
+            height: 500px;
+            overflow-y: auto;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .log-entry {
+            padding: 8px;
+            margin-bottom: 5px;
+            border-left: 3px solid #ccc;
+            padding-left: 12px;
+            animation: slideIn 0.2s ease-out;
+        }
+        
+        .log-entry.info {
+            border-left-color: #2196f3;
+            background: #e3f2fd;
+        }
+        
+        .log-entry.success {
+            border-left-color: #4caf50;
+            background: #e8f5e9;
+        }
+        
+        .log-entry.error {
+            border-left-color: #f44336;
+            background: #ffebee;
+        }
+        
+        .output-preview {
+            height: 400px;
+            overflow-y: auto;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: Georgia, serif;
+            line-height: 1.6;
+        }
+        
+        .full-output {
+            grid-column: 1 / -1;
+        }
+        
+        .iteration-counter {
+            font-size: 1.2em;
+            color: #333;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Beat Book Agent Monitor</h1>
+            <p class="subtitle">Real-time monitoring of AI-powered beat book generation</p>
+        </header>
+        
+        <div class="control-panel">
+            <div class="status">
+                <div id="statusBadge" class="status-badge idle">Idle</div>
+                <div id="iterationCounter" class="iteration-counter"></div>
+            </div>
+            <button id="startBtn" onclick="startGeneration()">Start Generation</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div id="toolCallCount" class="stat-value">0</div>
+                <div class="stat-label">Tool Calls</div>
+            </div>
+            <div class="stat-box">
+                <div id="iterationStat" class="stat-value">0</div>
+                <div class="stat-label">Iterations</div>
+            </div>
+            <div class="stat-box">
+                <div id="storiesExplored" class="stat-value">0</div>
+                <div class="stat-label">Stories Explored</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="panel">
+                <h2>🔧 Tool Calls</h2>
+                <div id="toolCallsContainer" class="log-container"></div>
+            </div>
+            
+            <div class="panel">
+                <h2>📊 Activity Log</h2>
+                <div id="logContainer" class="log-container"></div>
+            </div>
+            
+            <div class="panel full-output" id="outputPanel" style="display: none;">
+                <h2>📄 Generated Beat Book</h2>
+                <div id="outputContainer" class="output-preview"></div>
+                <button onclick="downloadOutput()" style="margin-top: 15px;">Download Beat Book</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const socket = io();
+        let toolCallCount = 0;
+        let storiesExplored = 0;
+        let finalOutput = '';
+        
+        // Connect to WebSocket
+        socket.on('connect', () => {
+            addLog('Connected to server', 'success');
+        });
+        
+        socket.on('status_update', (data) => {
+            updateStatus(data.status);
+            addLog(data.message, 'info');
+        });
+        
+        socket.on('iteration_update', (data) => {
+            document.getElementById('iterationStat').textContent = data.iteration;
+            document.getElementById('iterationCounter').textContent = 
+                `Iteration ${data.iteration}/${data.max_iterations}`;
+        });
+        
+        socket.on('tool_call', (data) => {
+            toolCallCount++;
+            document.getElementById('toolCallCount').textContent = toolCallCount;
+            
+            // Estimate stories explored based on tool results
+            if (data.result_preview && data.result_preview.includes('items')) {
+                const match = data.result_preview.match(/(\d+) items/);
+                if (match) {
+                    storiesExplored += parseInt(match[1]);
+                    document.getElementById('storiesExplored').textContent = storiesExplored;
+                }
+            }
+            
+            addToolCall(data);
+            addLog(`Tool call: ${data.tool}`, 'info');
+        });
+        
+        socket.on('response_received', (data) => {
+            addLog(`Response received (${data.stop_reason})`, 'info');
+        });
+        
+        socket.on('generation_complete', (data) => {
+            updateStatus('completed');
+            finalOutput = data.output;
+            displayOutput(data.output);
+            addLog(`✅ Generation complete! ${data.tool_calls} tool calls made.`, 'success');
+            document.getElementById('startBtn').disabled = false;
+        });
+        
+        socket.on('error', (data) => {
+            updateStatus('error');
+            addLog(`❌ Error: ${data.message}`, 'error');
+            document.getElementById('startBtn').disabled = false;
+        });
+        
+        socket.on('generation_started', (data) => {
+            addLog(data.message, 'success');
+        });
+        
+        function startGeneration() {
+            // Reset counters
+            toolCallCount = 0;
+            storiesExplored = 0;
+            document.getElementById('toolCallCount').textContent = '0';
+            document.getElementById('iterationStat').textContent = '0';
+            document.getElementById('storiesExplored').textContent = '0';
+            document.getElementById('toolCallsContainer').innerHTML = '';
+            document.getElementById('logContainer').innerHTML = '';
+            document.getElementById('outputPanel').style.display = 'none';
+            
+            updateStatus('running');
+            document.getElementById('startBtn').disabled = true;
+            socket.emit('start_generation');
+        }
+        
+        function updateStatus(status) {
+            const badge = document.getElementById('statusBadge');
+            badge.className = `status-badge ${status}`;
+            badge.textContent = status;
+        }
+        
+        function addToolCall(data) {
+            const container = document.getElementById('toolCallsContainer');
+            const toolCall = document.createElement('div');
+            toolCall.className = 'tool-call';
+            
+            const inputsStr = JSON.stringify(data.inputs, null, 2);
+            
+            toolCall.innerHTML = `
+                <div class="tool-call-header">
+                    <span class="tool-name">${data.tool}</span>
+                    <span class="timestamp">${data.timestamp}</span>
+                </div>
+                <div class="tool-inputs">${escapeHtml(inputsStr)}</div>
+                <div style="margin-top: 8px; color: #666; font-size: 0.9em;">
+                    Result: ${escapeHtml(data.result_preview)}
+                </div>
+            `;
+            
+            container.insertBefore(toolCall, container.firstChild);
+        }
+        
+        function addLog(message, type = 'info') {
+            const container = document.getElementById('logContainer');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            
+            const timestamp = new Date().toLocaleTimeString();
+            entry.textContent = `[${timestamp}] ${message}`;
+            
+            container.insertBefore(entry, container.firstChild);
+        }
+        
+        function displayOutput(output) {
+            const panel = document.getElementById('outputPanel');
+            const container = document.getElementById('outputContainer');
+            
+            // Convert markdown-ish to HTML (basic)
+            const html = output
+                .replace(/\n/g, '<br>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            container.innerHTML = html;
+            panel.style.display = 'block';
+        }
+        
+        function downloadOutput() {
+            const blob = new Blob([finalOutput], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `beat_book_${new Date().getTime()}.md`;
+            a.click();
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

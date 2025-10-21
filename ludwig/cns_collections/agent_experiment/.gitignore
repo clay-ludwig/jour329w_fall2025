@@ -1,0 +1,36 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignore generated beat books and logs
+beat_book_*.md
+tool_log_*.json
+
+# Ignore environment variables
+.env
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore Flask cache
+instance/
+.webassets-cache
+
+# Ignore SocketIO logs
+flask_session/
