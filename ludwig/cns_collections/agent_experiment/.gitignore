@@ -11,7 +11,7 @@ env.bak/
 venv.bak/
 
 # Ignore generated beat books and logs
-beat_book_*.md
+# beat_book_*.md  # Commented out - we want to commit final beat books
 tool_log_*.json
 
 # Ignore environment variables
