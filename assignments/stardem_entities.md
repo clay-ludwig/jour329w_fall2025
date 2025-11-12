@@ -48,7 +48,7 @@ cp ../cns_collections/add_metadata.py add_entities.py
 Let's look at that file: it currently does more than we need. As with the CNS collections assignment, you (or Copilot) will modify the prompt to do what we want: in this case, extract people, places and organizations into arrays. To help the LLM, you'll add an example to your prompt in addition to providing the structure of the JSON output. Change the output file to `stories_with_entities.json`. You can fetch another sample file if you want. Then run the script; it'll take a bit to process all 200 entries.
 
 ```bash
-uv run python add_entities.py --model YOUR MODEL --input stardem_sample.json
+uv run python add_entities.py --model groq/openai/gpt-oss-120b --input stardem_sample.json
 ```
 
 ### Repeat

@@ -64,7 +64,7 @@ Let's use the `add_entities.py` script you created for the previous assignment a
 cp ../../stardem_entities/add_entities.py add_entities.py
 ```
 
-Now, given that your stories are all from the same topic, modify the `add_entities.py` script so that the prompt takes advantage of that. Make the examples more specific, or provide some better context. 
+Now, given that your stories are all from the same topic, modify the `add_entities.py` script so that the prompt takes advantage of that. Make the examples more specific, or provide some better context.
 
 Run the script with your chosen model. Ask Copilot to alter the script so you can test it out with a smaller number of stories first, using a command-line --limit argument and to produce output files that are versioned.
 
