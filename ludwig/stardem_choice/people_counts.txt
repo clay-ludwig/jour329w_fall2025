@@ -1,0 +1,433 @@
+Person Mention Counts (Descending Order)
+==================================================
+
+Dr. Derek Simmons: 12
+Sharon Pepukayi: 6
+Emily Jackson: 5
+Wes Moore: 5
+Lindsey McCormick: 5
+Larry Porter: 4
+Susan Delean-Botkin: 3
+Jared Sherman: 3
+Cliff Coppersmith: 3
+Scott Evans: 2
+Matt Spiker: 2
+Stephanie Brohawn: 2
+Deanne Waters: 2
+A.J. Angeloni: 2
+Theresa Stafford: 2
+Chris Wheedleton: 2
+Matthew Streett: 2
+Ron Fithian: 2
+Jack Wilson Jr.: 2
+Lenny Pfeffer: 2
+Keasha Haythe: 2
+Frank Bartz: 2
+Travis Breeding: 2
+Jodi Colman: 2
+William Mengel: 2
+Anna Howie: 2
+Mackenzie Werner: 2
+Emmy Brown-Varon: 2
+Candace Henry: 2
+Erin Thornton: 2
+Mike Hewitt: 2
+Randy Guy: 2
+Eric Colvin: 2
+Sarah Green: 2
+Olivia Flynn: 2
+Buffy Giddens: 2
+Charlene Gould: 1
+Tom Costigan: 1
+Jimmy Jaramillo: 1
+Brian Wells: 1
+Katrina Greer: 1
+Lorelly Solano: 1
+Spud Blake: 1
+Mike Ledbetter: 1
+Stacy Whewell: 1
+Barry Smale: 1
+Earl Kratsch: 1
+Paula Speiden: 1
+Kathy Marinucci: 1
+Lorraine Slama: 1
+Sister Mary Agnes Duggan: 1
+Katie Theeke: 1
+Scott Muir: 1
+Richard Barton: 1
+Josh Rein: 1
+Amy Towers: 1
+Chad Shelly: 1
+Nikki VonDen-Bosch: 1
+Nikki Welzel: 1
+John Moyer: 1
+Daniell Darling: 1
+Catherine Langston: 1
+Carol Beatty: 1
+Julie Hickey: 1
+Leslie Nelson: 1
+Peggy: 1
+Jake: 1
+Bruce Bereano: 1
+Mrs. Lynch: 1
+Mr. Hudson: 1
+Albert: 1
+Nellie: 1
+Sue: 1
+Sandy: 1
+Dan Currell: 1
+Beth Brewster: 1
+Dr. Raymond Vergne: 1
+Bev Williams: 1
+Robert De Saro: 1
+Amy Dodson: 1
+Jackson Follett: 1
+Danielle Follett: 1
+Roberta Baxter Holt: 1
+Haines Holt: 1
+Buck Duncan: 1
+Andrea Schulte: 1
+Dan Harding: 1
+Michael Bell: 1
+Alyssa Scalia: 1
+Latoya Jenkins: 1
+Heidi M. Anderson: 1
+Darryl Isom: 1
+Mohammed Choudhury: 1
+Warner I. Sumpter: 1
+Bobbi Bee: 1
+Mark Jones: 1
+Amy Bauman: 1
+Courtney Handte: 1
+Rob Willoughby: 1
+Garrett Shull: 1
+Dr. Rebecca Wivell: 1
+Thomas "Trey" Mills: 1
+Dr. Yolanda Holloway: 1
+Neal Lambert: 1
+Carol Breeding: 1
+Alexandra Miller: 1
+Kirk Dahlbert: 1
+Lindsay Grow: 1
+Sarah Crebs: 1
+McKenna Fox: 1
+Jennifer Vallee: 1
+Makenna Nesselroad: 1
+Ashlynne Raby: 1
+Cathy Higgins: 1
+Marissa Bacco: 1
+Alexis Willoughby: 1
+Valerie Moore: 1
+Stephanie Stebbins: 1
+Calyn Shellabarger: 1
+Sarah Hill: 1
+Brian Curtis: 1
+Zoe Breeding: 1
+Jackie Murray: 1
+Mary Jo Kerr: 1
+Briana Walker: 1
+Andrea Hill: 1
+Jeannine Necessary: 1
+Tess Charney: 1
+Hannah Holmes: 1
+Misti Larmore: 1
+Stacy DeWitt: 1
+Ali Rodrigues: 1
+Shannon Thompson: 1
+Sherry Murray: 1
+Kaitlin George: 1
+Colleen France: 1
+Garrett Nepert: 1
+Rondell Sorrell: 1
+Patrick Pearce: 1
+Conor Prochaska: 1
+Crystal Drexel: 1
+Tommy Jefferson: 1
+Chasity Wright: 1
+Lindsay Julius: 1
+Tammie Willis: 1
+Donovan Beck: 1
+William Becker: 1
+Eric Blackwell: 1
+Bobby Helgason: 1
+Connor Polosky: 1
+Lee Sutton: 1
+Barbara Henderson: 1
+Hunter Van-Reenan: 1
+Jacob Dickinson: 1
+Austin Dickinson: 1
+Allison Beyer: 1
+Kelsie Beall: 1
+James Bell: 1
+Cynitha Woolford: 1
+Michael Collins: 1
+Sierra Gambrill: 1
+Gave Parker: 1
+Patricia Prosser: 1
+Susan Morgan: 1
+Marguerite Roza: 1
+Milton E. Nagel: 1
+Richard Henry: 1
+Richard P. Henry: 1
+Charles Ewald: 1
+Todd Watkins: 1
+Jeannette DeLude: 1
+Amy Horne: 1
+Angel Perez: 1
+Ashley Powell: 1
+Kerri Clear: 1
+Clifford Coppersmith: 1
+Dr. Robert George: 1
+Cornel West: 1
+Justice Elena Kagan: 1
+Deja Thompson: 1
+Sandi Barry: 1
+Jamie Raskin: 1
+Brian Schatz: 1
+John Kennedy: 1
+Cameron Samuels: 1
+Alexi Giannoulias: 1
+Nicholas Gray: 1
+Maria Navarro: 1
+Cheryl Davis: 1
+Brian Street: 1
+Tammika Little: 1
+Laura Aberg: 1
+Carey Wright: 1
+Clarence Crawford: 1
+Casey Hart: 1
+Dr. Jean Griswold: 1
+Michael Slupecki: 1
+Alex Boyé: 1
+Tabius J. Wilson: 1
+Randei Collins: 1
+Taylan Brooks: 1
+John Strickland: 1
+Anne Davis: 1
+Jordan Loyd: 1
+Kentavius Jones: 1
+Cristy Morrell: 1
+Mirta Valdés-Bradner: 1
+Aubrey Swisher: 1
+Andrew Burke: 1
+Keller Scott Daniels: 1
+Dr. Ronald Nowaczyk: 1
+Kyle Hofmann: 1
+Thomas Hayman: 1
+Andy Anders: 1
+Natasha Panduwawala: 1
+Mike Sosulski: 1
+Johnnie Johnson: 1
+Colonel Clarence Hodson: 1
+Lelia Hodson Hynson: 1
+Sally Hynson Hopkins: 1
+Kevin Shafer: 1
+Adam McDonald: 1
+Deborah Bridges: 1
+William Messner: 1
+Jeff Macris: 1
+Faith Johnson: 1
+Michael A. Meoli: 1
+Jonathan Brittingham: 1
+Henry Grote: 1
+Monique Payne: 1
+McKenzie Tubbs: 1
+Sariah Miranda: 1
+Makayla Bowery: 1
+Isabella Hutson: 1
+Jah'Airra Collin: 1
+Macailey Stewart: 1
+Colton Stoltzfus: 1
+Paige Willey: 1
+Nickolas Newman: 1
+Li Lu Del Sol: 1
+Safir Zarif: 1
+Jade Ayalan Torres: 1
+Elias Waters: 1
+Luzdary Hermandez Velasquez: 1
+Preston Kane: 1
+Blaine Tiffany: 1
+Silas Jones: 1
+Nevaeh Jones: 1
+James Stack: 1
+Hailey Fowler: 1
+Janiyah Griffin: 1
+Zachary Adams: 1
+Olivia Amygdalos: 1
+Kelby Booth: 1
+Xuanyao (Henry) Feng: 1
+Alanna Grace: 1
+Jessica Hammond: 1
+Paget Kellogg: 1
+Tilghman Overton: 1
+Grace Anne Phillips: 1
+Julia Reed: 1
+Joanna Riley: 1
+Aaron Sanderson: 1
+Anna Szwaja: 1
+Brielle Tyler: 1
+Yining Wei: 1
+Jiacheng (Jason) Ye: 1
+Julia Buchanan: 1
+Turner Day: 1
+Maren Kneeland: 1
+YaXin (Angelina) Lin: 1
+Nicholas Abell: 1
+Thomas de los Reyes: 1
+Zacharia Mozher: 1
+Elizabeth (Lane) Parkhurst: 1
+Damian René: 1
+Laura Perna: 1
+Dr. Kimberly Griffin: 1
+Katharina Maisel: 1
+Reilly Hawkens McIntyre: 1
+Arianna Cintron: 1
+Alexandria Embert: 1
+Reagan Mangum: 1
+Bailey Werner: 1
+Taylour Holloway: 1
+Aireal Vickers: 1
+Jalen Carroll: 1
+Sydnie Bisesi: 1
+Travis Murray: 1
+Navonne Owen: 1
+Vicki Burchfield: 1
+Julie Hawley: 1
+Shawn Leffler: 1
+Michael Feehley: 1
+Mike Detmer: 1
+Jeff Bell: 1
+Father James Nash: 1
+Tamar Sarnoff: 1
+Janet Salazar: 1
+Michael Geoffroy: 1
+Leslie Sherman: 1
+Betsy Moyer-Taylor: 1
+Jeremy Bard: 1
+Frank Keegan: 1
+Lucy Taylor: 1
+Hailey Gill: 1
+Katie Harvey: 1
+Raven Fairbanks: 1
+Terrance Vincent: 1
+Tolbert Rowe: 1
+Robert Willey: 1
+Dr. James Orr Jr.: 1
+Wayne Cole: 1
+Rebeccah Chambers: 1
+Leland Courie: 1
+Felix Fimbres: 1
+Brooke Gauck: 1
+Dallas Helsel: 1
+Shelby MacFarland: 1
+Leslie Monter Casio: 1
+Molly Coughenour: 1
+Riley Schall: 1
+Eric Shockley: 1
+Bailey Thayer: 1
+Rashad Wilson: 1
+Keith Hale: 1
+Donna DiGiacomo: 1
+Christi Saylor: 1
+Ashley Singer: 1
+Julie Blyman: 1
+Sam Shoge: 1
+Karen Hesson: 1
+Betsy Ricketts: 1
+Connie Dean: 1
+Aly Swann: 1
+James Smith: 1
+Christopher Bekefi: 1
+Doug Prince: 1
+Adam Tolley: 1
+Philip Dumenil: 1
+Austin Hahn: 1
+Tiara Booker-Dwyer: 1
+Dr. Celeste-Marie Bernier: 1
+Anna Murray Douglass: 1
+Frederick Douglass: 1
+Linda Brown: 1
+Francis Blazejak: 1
+Tim Thurber: 1
+Joseph Candel: 1
+Harlin Bartolon: 1
+Jamie Beachy: 1
+William E. Kirwan: 1
+Rachel Hise: 1
+Addie Kaufman: 1
+Ryan Daniel: 1
+Jamie Miller: 1
+Larry Hogan: 1
+Sue Simmons: 1
+Marci Leach: 1
+J.P. Kelly: 1
+Sara Porter-Lepore: 1
+Cara Calloway: 1
+Deborah Boulden: 1
+Abigail Trice: 1
+Devon Beck: 1
+Robert Gowen: 1
+Jon Marketto: 1
+Mirta Valdes-Bradner: 1
+Jansy Lorenzo: 1
+Joanna Santizo-Morales: 1
+Nelvin Tomas: 1
+Nayeli Vasquez-Tomas: 1
+Maria Ramirez Perez: 1
+Sofia Ramirez Gonzalez: 1
+Kelly Perez Reyes: 1
+Shari: 1
+Macario Deleon: 1
+Anahi Lopez Salas: 1
+Ingrid Domingo Mendez: 1
+Ingrid Diaz: 1
+Renata Diaz Gomez: 1
+Yamileth Benitez Cordova: 1
+Shirley Cifuentes-Bautista: 1
+Stephanie Alfaro: 1
+Ximena Castro Bautista: 1
+Helga Einhorn: 1
+Daisy Bradwell: 1
+Darlene Spurrier: 1
+Lynne Duncan: 1
+Jymil Thompson: 1
+Summer Smith: 1
+Renee Hesson: 1
+Melanie Bolles: 1
+Rick Barton: 1
+Jones: 1
+Natalie Martinaitis: 1
+Courtney Rydel: 1
+Roy Kesey: 1
+Todd Rasher: 1
+David Domenici: 1
+Debbie Cohee-Wright: 1
+Bryn Ponti: 1
+Peter Thayer: 1
+Kelly Phipps: 1
+Carolyn Thompson: 1
+Lindsey Parte: 1
+Lincoln Parte: 1
+Dr. Karen Couch: 1
+Joe Goetz: 1
+Francoise Sullivan: 1
+Trish McGee: 1
+Sam Hilgartner: 1
+Grigg Mullen: 1
+Jenn Kuhn: 1
+Dr. Sarah Crebs-Oberdorf: 1
+Jason Buckel: 1
+Stephen Hershey: 1
+Helene Grady: 1
+Sarah Jones: 1
+Andrea C. Proimos: 1
+Michael Rosato: 1
+Adam Himhoff: 1
+Brad Phillips: 1
+Deborah Casey: 1
+Sheree Sample-Hughes: 1
+Jefferson Ghrist: 1
+
+==================================================
+Total unique people: 426
+Total mentions: 490
