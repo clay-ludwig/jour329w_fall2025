@@ -5,40 +5,59 @@
 
 ## 1. Beat Overview  
 
-The Eastern Shore education landscape is defined by a mix of chronic funding challenges, innovative community‑driven interventions, and the occasional flashpoint that reaches the national stage (e.g., federal research compliance). Reporters must balance coverage of **policy & budget**, **student achievement**, **community partnerships**, **higher‑education accountability**, **campus climate**, **school facilities**, **disaster resilience**, and **human‑interest stories of educators and learners** while keeping an eye on the human stories that illustrate larger trends.
+The Eastern Shore education landscape is defined by a mix of chronic funding challenges, innovative community‑driven interventions, and the occasional flashpoint that reaches the national stage (e.g., federal research compliance). Reporters must balance coverage of **policy & budget**, **student achievement**, **community partnerships**, **higher‑education accountability**, **campus climate**, **school facilities**, **disaster resilience**, **human‑interest**, **arts programming**, **violence‑prevention initiatives**, **board governance**, **vocational & workforce development**, **early‑childhood nonprofit education**, **student‑voice & curriculum depth**, **college‑level alcohol policy**, **mental‑health & mindfulness**, **digital‑infrastructure reliability**, **alumni philanthropy**, **school safety & security**, **technology‑use policies**, **alternative‑education models** such as homeschooling, and now **public‑library as an educational hub**, **parental‑rights debates**, **state‑mandated Blueprint funding implementation**, **social‑emotional learning (SEL) expansion**, **grassroots food‑security philanthropy**, **civics‑focused academic competitions**, **firearms‑related extracurricular programs**, **STEM outreach from higher‑education partners**, and **gender‑equity apprenticeship pipelines**.  
 
-Recent coverage (May 2025 – Dec 2024) highlights three intersecting threads:
+---  
 
-| Thread | Core Issue | Recent Illustration |
-|--------|------------|----------------------|
-| **Childhood literacy & early‑learning gaps** | Low third‑grade reading scores, especially in Dorchester County. | Literacy hubs, Open Doors Partners, Wyatt Foundation funding. |
-| **Community‑based solutions** | NGOs, libraries, YMCA, and other nonprofits filling gaps left by school budget cuts. | Open Doors Partners fire & strategic plan, YMCA reading hubs. |
-| **Higher‑education compliance & transparency** | Federal grant disclosures, foreign‑affiliation reporting. | University of Delaware settlement, NASA‑grant case. |
+## 2. Core Themes (Expanded)
 
-**New coverage themes emerging from the latest batch (Sept 2024 – Aug 2025):**
+### 2.1 Policy & Budget  
 
-| Theme | Why it matters | Recent illustration |
-|-------|----------------|---------------------|
-| **Non‑profit resilience & strategic planning** – how literacy‑focused NGOs rebound from crises (fire, loss of materials) and build multi‑year plans. | Shows the fragility and adaptability of community‑based supports that supplement public schools. | Open Doors Partners in Education’s fire, $40,000 loss, rapid relocation, and five‑year strategic plan (Story 1). |
-| **Environmental & hands‑on STEM enrichment** – garden‑based programs that teach biology, ecology, nutrition, and sustainable agriculture. | Connects K‑12 learning to climate‑change awareness, food security, and local economic development. | Kent County Parks & Rec “Green Thumbs” summer garden program (Story 2). |
-| **Technology & device‑use policy** – pilots of locked‑phone pouches (Yondr) to curb distractions, improve discipline, and manage emergency communication. | Balances student safety, parental expectations, and classroom focus; may set precedent for statewide policy. | Caroline County pilot, with Dorchester and Talbot counties preparing to follow (Story 3). |
-| **State education reform & funding adjustments** – the Blueprint for Maryland’s Future is being re‑shaped by the General Assembly, with targeted cuts and pauses that could affect Eastern Shore districts. | Funding decisions directly shape services for students in poverty, special education, and English‑language learners. | April 10, 2025 bill slowing Blueprint investments (Story 4). |
-| **Informal STEM & hobbyist programs** – rocketry clubs and hobbyist associations provide hands‑on engineering experiences outside the classroom. | Expands the pipeline to STEM careers, especially in rural areas where school labs are limited. | Maryland‑Delaware Rocketry Association launch at Central Sod Farm (Story 5). |
-| **Campus political discourse & free‑speech** – student‑run forums foster civil dialogue amid a polarized national climate. | Reflects broader societal tensions and offers a barometer of campus climate on the Eastern Shore. | PoliTalks leadership transition at Washington College (Story 6). |
-| **Historical‑lens policy advocacy** – using anniversaries such as Juneteenth to foreground education equity and reform. | Connects community memory to contemporary policy debates, mobilizing civic action. | Troy Rolling’s Juneteenth column urging Maryland leaders to prioritize education policy (Story 1). |
-| **Board of Education elections as policy levers** – candidate platforms reveal community priorities on teacher recruitment, Blueprint implementation, early‑childhood readiness, and ELL support. | Election outcomes directly shape district‑level decisions on funding allocation, curriculum, and equity initiatives. | 2024 Talbot County Board of Education candidate Q&As (Story 2). |
-| **College‑Board recognition and college‑readiness pathways** – highlighting high‑achieving rural and Hispanic students and their scholarship prospects. | Demonstrates that rigorous academic preparation exists on the Eastern Shore and can be leveraged for post‑secondary access. | Caroline County students honored by College Board National Recognition Programs (Story 3). |
+*Continues to be a dominant beat focus.* Recent stories (e.g., Dorchester County’s $10.19 M deficit, 2025) highlight the pressure on districts to stretch limited resources while still meeting mandates for safety, curriculum, and extracurriculars.  
 
-These threads dovetail with existing literacy, funding, and higher‑education angles, offering fresh story‑building blocks for reporters.
+#### Capital‑Improvement Planning  
 
-### Emerging Narrative Threads to Watch  
+- **Lockerman Middle School – Caroline County** – The Board of Education has approved a FY 2027‑30 capital‑improvement program that earmarks $1.4 M in FY27, $8.1 M in FY28 and $15.5 M in FY29 for the new Lockerman Middle School. The plan is being negotiated with the state to lower the local share. Key contacts: **Bill Mengel**, Director of Operations (who presented the plan), and **Superintendent Derek Simmons**, who indicated the county’s ask will be trimmed after “research of student population and other factors.” (Story 1, 9/3/2025)  
 
-1. **Equity‑focused policy debates** – The Juneteenth column (Story 1) reframes the school‑choice conversation through a civil‑rights lens, citing Frederick Douglass and recent polling showing strong Black‑parent support for charter schools. This introduces a political‑policy angle that intersects with Blueprint funding and local board decisions.  
+- **Ed Specs Committee Recommendation – July 2, 2025** – The Ed Specs Committee recommended the **North Caroline High School** property as the preferred site for the new Lockerman Middle School. Highlights from the recommendation:  
 
-2. **Governance & electoral dynamics** – Talbot County’s upcoming Board of Education races (Story 2) provide a micro‑cosm of how community leaders grapple with the Blueprint, teacher shortages, and the “opportunity gap.” Tracking these candidates from primary through the general election will reveal shifting priorities and voter sentiment.  
+  * **Infrastructure & Shared‑Space Benefits** – Architect **Robyn Toth** emphasized the “clear paths for indoor and outdoor activities,” the lack of street crossings, and the ability to share the high school’s large auditorium and gym for events.  
+  * **Cost Savings** – Development on the North Caroline site would be about **$500,000 cheaper** ($10 M vs. $10.5 M for the Double Hills Road site).  
+  * **Budget Overview** – Projected total cost **$103.82 M**, with roughly **$80 M from the state** and the remainder from local sources.  
+  * **Solar Array & Traffic Concerns** – The existing solar array would cost ~**$180,000** to purchase and relocate; traffic on Central Avenue is a noted community concern.  
+  * **Decision Timeline** – Board will vote in August 2025.  
 
-3. **Recognition of academic excellence in rural contexts** – Caroline County’s College Board honors (Story 3) underscore that high‑performance students exist even in small‑town settings. Follow‑up stories can explore how schools leverage these honors for scholarships, college counseling, and community pride.  
+  *Contacts:* **Robyn Toth** (architect, quoted in story), **Ahmad Garnett** (author, agarnett@chespub.com).  
 
-4. **Early‑childhood preparedness post‑pandemic** – Multiple candidates (Henry, Jurrius, Howie) stress pre‑K expansion and kindergarten readiness. This aligns with earlier coverage of literacy hubs and can be examined against state‑wide data on pandemic learning loss.  
+  **Story‑Angle Suggestions**  
+  - **Negotiation Tracker:** Follow Caroline County’s negotiations with the Maryland State Department of Education. How much of the projected cost will ultimately become a local burden?  
+  - **Demographic Deep‑Dive:** Profile the “research of student population” that drives capital‑needs estimates – enrollment trends, birth‑rate forecasts, and potential consolidations.  
+  - **Shared‑Campus Impact Study:** Examine how co‑locating a middle school with a high school could affect student outcomes, transportation logistics, and community use of facilities.  
+  - **Solar & Sustainability Angle:** Investigate the feasibility and cost‑benefit of acquiring the existing solar array versus installing a new system; explore district renewable‑energy goals.  
+  - **Traffic & Safety Review:** Work with the County Planning Office to assess traffic impact on Central Avenue and propose mitigation strategies.  
+  - **Comparative Lens:** Contrast Caroline’s capital‑improvement timeline and funding strategy with those of Dorchester, Talbot, and other Eastern Shore districts to spot regional patterns.  
 
-5. **ELL & Hispanic student
+#### New Funding Streams – Alumni & Foundation Support  
+
+- **Talbot County Education Foundation Alumni Honors (Nov 20, 2024)** – The Foundation honored three distinguished alumni – **Keasha Haythe** (Foundation of Hope president, Talbot County Council member), **JoAnn “Asparagus” Murray** (former family‑law magistrate, Robert Russa Moton HS alum), and **Dr. Ludwig Eglseder III** (local physician). The ceremony raised funds for six teacher‑requested projects, including a **student‑leadership program**, **pre‑K language and literacy initiative**, and **Easton Middle School band**. Superintendent **Sharon Pepukayi** emphasized the importance of teachers being able to pitch ideas and secure external support.  
+
+  **Angle Ideas**  
+  - Track how alumni‑driven fundraising translates into concrete programmatic outcomes.  
+  - Profile each honoree’s ongoing involvement with TCPS (council work, nonprofit leadership, medical volunteerism).  
+  - Analyze the role of the foundation in bridging budget gaps for innovative curricula.  
+
+#### State‑Level Blueprint for Maryland’s Future (Kirwan) – Emerging Debate  
+
+- **“It’s time to pause the state’s education blueprint” (May 17, 2025)** – Columnist **David Reel** calls for a bipartisan pause on all state funding and new mandates under the Blueprint for Maryland’s Future. *(The beat book will continue to track legislative developments and district responses.)*  
+
+---
+
+### 2.2 Student Competitions & Civic‑Engagement Programs  
+
+**National History Day (NHD) – Upper Shore Participation**  
+
+- **Key Players:** History teachers **Thomas Hayman** and **Andy Anders** (Centreville Middle School, Queen Anne’s County); participating schools across **Kent, Queen Anne’s, Talbot, and Cecil** counties.  
+- **Libraries as Research Hubs:** Partnerships with **Queen Anne’s County Library (Kent Island branch)**, **Talbot County Free Library (Easton)**, **Chesapeake College Learning Resource Center**, and **County libraries** provide students with primary‑source access, database help, and research skill workshops.  
+- **Student Impact:** The Upper Shore now ranks **second in the state for NHD participation**, sending more students to the state finals than any county except Baltimore. Projects span documentaries, exhibits, performances, websites, and papers aligned with the 2024 theme “Turning Points in History.”  
+
+**Why it matters:** N

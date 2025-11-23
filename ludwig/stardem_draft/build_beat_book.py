@@ -110,6 +110,17 @@ Your role is to create the NEXT edited version by thoughtfully integrating updat
 {latest_groq}
 </latest_groq_version>
 
+<word_count_guidance>
+Current word count: ~{word_count} words
+Target: Keep the beat book at or under 7,000 words
+
+**If current word count is OVER 7,000 words:** You MUST be aggressive about cutting content. Remove one-off stories, tangential details, and less important developments.
+
+**If current word count is UNDER 7,000 words:** You have room to add valuable content, but still prioritize quality over quantity.
+
+**Word count management is a critical editorial responsibility.** A concise, focused beat book is far more valuable than an exhaustive one.
+</word_count_guidance>
+
 <instructions>
 Your goal is to produce a polished, cohesive beat book that will serve a new reporter for years to come. This is NOT about choosing one version over another - it's about synthesizing the best of both while keeping the end goal in mind.
 
@@ -120,14 +131,28 @@ Think long-term and holistically:
 - Where can you clarify relationships, timelines, or context?
 - How do new additions fit into the overall arc and structure of the guide?
 
+**BE AGGRESSIVE ABOUT CUTTING:**
+- One-off stories that don't represent broader trends or ongoing issues
+- Minor developments at individual schools that don't reflect systemic patterns
+- Tangential details about people who aren't key decision-makers
+- Story ideas that are too narrow or time-specific to be useful long-term
+- Redundant information that's already covered elsewhere in the beat book
+
+**Focus on what matters across the Eastern Shore:**
+- Systemic issues affecting multiple districts
+- Key decision-makers who shape policy and direction
+- Recurring themes in education coverage
+- Story angles with broad relevance and lasting impact
+
 Compare the two versions and:
-1. INTEGRATE new people, institutions, themes, or story ideas from the latest version
+1. INTEGRATE new people, institutions, themes, or story ideas from the latest version ONLY if they meet the criteria above
 2. PRESERVE strong writing, clear explanations, and valuable context from your previous refined version
 3. IMPROVE clarity where either version is confusing or redundant
 4. STRENGTHEN the narrative flow and connections between themes
-5. REMOVE truly redundant information only if it doesn't add value
+5. AGGRESSIVELY REMOVE one-off stories, minor details, and tangential information
 6. VERIFY that key details (names, dates, positions) are accurate and consistent
 7. CONSIDER the overall structure - does it need reorganizing as it grows?
+8. RESPECT the word count target - if over 7,000 words, you must trim significantly
 </instructions>
 
 <style_requirements>
@@ -205,19 +230,32 @@ USE WEB SEARCH FOR:
 You have a maximum of 10 web searches - use them strategically to improve accuracy and relevance.
 </instructions>
 
+<word_count_guidance>
+Current word count: ~{word_count} words
+Target: Keep the beat book at or under 7,000 words
+
+**This is a critical checkpoint to manage word count.** If the beat book is approaching or exceeding 7,000 words, you MUST aggressively trim content. Be ruthless about cutting one-off stories and minor details.
+</word_count_guidance>
+
 <editorial_review_criteria>
 **What to EMPHASIZE:**
-- Major recurring themes and ongoing issues
-- Key decision-makers who are still active and relevant
-- Story angles with lasting value
-- Institutions that appear frequently in coverage
+- Major recurring themes and ongoing issues across multiple districts
+- Key decision-makers who are still active and relevant (superintendents, board chairs, influential advocates)
+- Story angles with lasting value and broad applicability
+- Institutions that appear frequently in coverage and shape regional policy
+- Systemic challenges facing Eastern Shore education
 
-**What to CUT or DE-EMPHASIZE:**
-- One-off events with no broader significance
+**What to AGGRESSIVELY CUT:**
+- **One-off stories** that don't illustrate broader trends (e.g., a single school's new sign, a one-time event)
+- **Minor school-level developments** that don't reflect systemic issues
 - People who have left their positions or are no longer relevant
 - Resolved issues that are no longer active
+- **Tangential details** about individuals who aren't key decision-makers
 - Redundant or repetitive information
-- Tangential details that don't help a new reporter understand the beat
+- **Story ideas that are too narrow or time-bound** to help a reporter 6+ months from now
+- Details that don't help a new reporter understand the beat's major players and themes
+
+**Ask yourself:** Would a reporter who starts this job 6 months from now care about this detail? Does it represent a pattern or just a single incident?
 
 **What to VERIFY:**
 - Job titles and current positions
@@ -297,6 +335,9 @@ def refine_with_claude(previous_refined, latest_groq, batch_num, total_batches, 
     progress_percentage = (processed_count / total_stories) * 100
     remaining_stories = total_stories - processed_count
     
+    # Calculate approximate word count of current refined beat book
+    word_count = len(previous_refined.split())
+    
     # Provide stage-specific guidance
     if progress_percentage < 25:
         stage_guidance = "EARLY STAGE: Focus on establishing the foundation, voice, and basic structure of the beat book. Identify the major themes and players that are emerging."
@@ -316,6 +357,7 @@ def refine_with_claude(previous_refined, latest_groq, batch_num, total_batches, 
         remaining_stories=remaining_stories,
         progress_percentage=progress_percentage,
         stage_guidance=stage_guidance,
+        word_count=word_count,
         previous_refined=previous_refined,
         latest_groq=latest_groq
     )
@@ -373,6 +415,9 @@ def review_with_claude(current_refined, batch_num, total_batches, processed_coun
     progress_percentage = (processed_count / total_stories) * 100
     remaining_stories = total_stories - processed_count
     
+    # Calculate approximate word count of current refined beat book
+    word_count = len(current_refined.split())
+    
     prompt_text = CLAUDE_REVIEW_PROMPT.format(
         current_date=current_date,
         batch_num=batch_num,
@@ -381,6 +426,7 @@ def review_with_claude(current_refined, batch_num, total_batches, processed_coun
         total_stories=total_stories,
         remaining_stories=remaining_stories,
         progress_percentage=progress_percentage,
+        word_count=word_count,
         current_refined=current_refined
     )
     
