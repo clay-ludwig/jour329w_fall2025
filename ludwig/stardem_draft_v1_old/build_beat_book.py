@@ -3,7 +3,7 @@
 Iteratively build a beat book for education reporting by processing stories in random batches.
 Uses a two-stage process:
 1. Groq GPT-OSS-120B reads stories and updates education_beat_book.md
-2. Claude Sonnet 4.5 refines the beat book and outputs education_beat_book_refined.md
+2. Claude Haiku 4.5 refines the beat book and outputs education_beat_book_refined.md
 """
 import json
 import subprocess
@@ -21,14 +21,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-BEAT_BOOK_PROMPT = """You are helping create a comprehensive "beat book" - a narrative guide for a new reporter covering the education beat in Caroline County, Maryland for the Easton Star-Democrat.
+BEAT_BOOK_PROMPT = """You are helping create a comprehensive "beat book" - a narrative guide for a new reporter covering the education beat for the Easton Star-Democrat, a newspaper serving Maryland's Eastern Shore.
 
 <context>
 Today is {current_date}.
 
 You are being shown stories in batches of {batch_size} at a time from a total collection of {total_stories} education stories. This is batch {batch_num} of {total_batches}. Your job is to INTEGRATE and EXPAND the beat book based on what you learn from these new stories.
-
-CRITICAL FOCUS: This beat book is ONLY about education in Caroline County, MD. EXCLUDE and IGNORE any information about other Maryland counties (Dorchester, Kent, Queen Anne's, Talbot, etc.) even if they appear in the source stories. Focus exclusively on Caroline County schools, districts, officials, and education issues.
 
 CRITICAL: You are building this beat book progressively. The current beat book below already contains valuable information from {processed_count} previously analyzed stories. Your task is to ADD to and ENRICH this existing content, NOT replace it. Think of yourself as expanding a living document, weaving new threads into an existing tapestry.
 </context>
@@ -43,18 +41,17 @@ CRITICAL: You are building this beat book progressively. The current beat book b
 
 <instructions>
 Your goal is to INTEGRATE the new stories into the existing beat book by:
-- Adding new people, institutions, or themes you discover IN CAROLINE COUNTY
-- Expanding on themes already present with new examples and context FROM CAROLINE COUNTY
-- Adding new story angle suggestions based on patterns you see in CAROLINE COUNTY coverage
+- Adding new people, institutions, or themes you discover
+- Expanding on themes already present with new examples and context
+- Adding new story angle suggestions based on what you see
 - Enriching sections that could benefit from additional depth
 - Connecting new information to existing threads in the narrative
-- Explain what matters on this beat using examples and lessons from CAROLINE COUNTY stories
-- Suggest story ideas and undercovered angles specific to CAROLINE COUNTY
+- Explain what matters on this beat using examples and lessons from the stories
+- Suggest story ideas and undercovered angles based on patterns you see in the coverage
 - Flag unfinished stories (ongoing lawsuits, policy debates) with a caveat that they may already be resolved
 - Give more weight to recent coverage - the beat book should orient toward the future
 - Include specific story references and context when relevant
 - Mention contact information for sources only when available in the stories
-- SKIP any stories that are primarily about other counties - only extract Caroline County information
 </instructions>
 
 <critical_preservation_rules>
@@ -78,7 +75,7 @@ Provide your response in one of two formats:
 </output_format>"""
 
 
-CLAUDE_REFINE_PROMPT = """You are a senior editor refining a "beat book" - a narrative guide for a new reporter covering the education beat in Caroline County, Maryland for the Easton Star-Democrat. A junior staff writer has been reading source stories and building the beat book; your job is to edit and polish their work.
+CLAUDE_REFINE_PROMPT = """You are a senior editor refining a "beat book" - a narrative guide for a new reporter covering the education beat for the Easton Star-Democrat, a newspaper serving Maryland's Eastern Shore. A junior staff writer has been reading source stories and building the beat book; your job is to edit and polish their work.
 
 <meta_context>
 Today is {current_date}.
@@ -135,18 +132,17 @@ Think long-term and holistically:
 - How do new additions fit into the overall arc and structure of the guide?
 
 **BE AGGRESSIVE ABOUT CUTTING:**
-- Any information about counties other than Caroline County (Dorchester, Kent, Queen Anne's, Talbot, etc.)
-- One-off stories that don't represent broader trends or ongoing issues IN CAROLINE COUNTY
+- One-off stories that don't represent broader trends or ongoing issues
 - Minor developments at individual schools that don't reflect systemic patterns
 - Tangential details about people who aren't key decision-makers
 - Story ideas that are too narrow or time-specific to be useful long-term
 - Redundant information that's already covered elsewhere in the beat book
 
-**Focus on what matters in Caroline County:**
-- Systemic issues affecting Caroline County schools and students
-- Key decision-makers in Caroline County who shape policy and direction
-- Recurring themes in Caroline County education coverage
-- Story angles with relevance and lasting impact for Caroline County
+**Focus on what matters across the Eastern Shore:**
+- Systemic issues affecting multiple districts
+- Key decision-makers who shape policy and direction
+- Recurring themes in education coverage
+- Story angles with broad relevance and lasting impact
 
 Compare the two versions and:
 1. INTEGRATE new people, institutions, themes, or story ideas from the latest version ONLY if they meet the criteria above
@@ -174,14 +170,13 @@ ESSENTIAL WRITING STYLE (The senior editor will refine this, but follow these gu
 </style_requirements>
 
 <editorial_priorities>
-1. **Caroline County focus** - This beat book covers ONLY Caroline County, MD. Remove any information about other counties.
-2. **Accuracy over volume** - Get names, titles, and facts right; remove speculation
-3. **Clarity over cleverness** - If something is confusing in either version, clarify it
-4. **Coherence over completeness** - A well-integrated narrative beats an exhaustive list
-5. **Future-focus over history** - Emphasize ongoing issues and story opportunities
-6. **Lasting value over timeliness** - What will still matter months from now?
-7. **Narrative arc** - The beat book should tell a story about Caroline County education, not just compile facts
-8. **Plain, direct style** - Avoid flowery language, metaphors, rhetorical devices, or literary flourishes. Write like a wire service reporter: clear, factual, unadorned.
+1. **Accuracy over volume** - Get names, titles, and facts right; remove speculation
+2. **Clarity over cleverness** - If something is confusing in either version, clarify it
+3. **Coherence over completeness** - A well-integrated narrative beats an exhaustive list
+4. **Future-focus over history** - Emphasize ongoing issues and story opportunities
+5. **Lasting value over timeliness** - What will still matter months from now?
+6. **Narrative arc** - The beat book should tell a story about this beat, not just compile facts
+7. **Plain, direct style** - Avoid flowery language, metaphors, rhetorical devices, or literary flourishes. Write like a wire service reporter: clear, factual, unadorned.
 </editorial_priorities>
 
 <update_guidelines>
@@ -197,7 +192,7 @@ Provide your response in one of two formats:
 </output_format>"""
 
 
-CLAUDE_REVIEW_PROMPT = """You are a fact-checking editor conducting a comprehensive verification review of an education beat book for the Easton Star-Democrat, covering education in Caroline County, Maryland. This is a FACT-CHECKING checkpoint using web search.
+CLAUDE_REVIEW_PROMPT = """You are a senior editor conducting a comprehensive review of an education beat book for the Easton Star-Democrat, covering Maryland's Eastern Shore. This is a RESEARCH AND EDITORIAL CLEANUP checkpoint.
 
 <meta_context>
 Today is {current_date}.
@@ -207,277 +202,103 @@ CHECKPOINT REVIEW: You are {progress_percentage:.1f}% through the overall projec
 - {processed_count} of {total_stories} stories have been analyzed
 - {remaining_stories} stories remain
 
-This is a fact-checking pause. Use web search to verify ALL factual claims in the beat book and create a report of items to double-check and suggested fixes.
+This is a pause to step back, verify accuracy, assess importance, and trim excess. You have web search access to fact-check and research.
 </meta_context>
 
 <current_beat_book>
 {current_refined}
 </current_beat_book>
 
-<previous_fact_check_report>
-{previous_fact_check}
-</previous_fact_check_report>
-
 <instructions>
-Your PRIMARY task is to FACT-CHECK the current beat book using web search and create a report of findings. For every factual claim, you should:
+Your task is to review, fact-check, and refine the current beat book with research tools. This is about QUALITY CONTROL and EDITORIAL BALANCE, not adding new content.
 
-1. **Systematically verify ALL facts** - Go through the beat book and identify every verifiable fact:
-   - Names and titles of people mentioned
-   - Positions/roles of officials and educators
-   - Status of ongoing issues (lawsuits, policy debates, controversies)
-   - School names, district names, institutional details
-   - Dates of events or policy changes
-   - Statistics or numbers mentioned
-   - Contact information
+PRIMARY GOALS:
+1. **Fact-check key information** - Verify current positions, roles, ongoing issues, contact details
+2. **Assess importance** - Based on your research, determine what matters most and should get more emphasis
+3. **Cut irrelevant content** - Remove tangential information that doesn't serve the beat book's purpose
+4. **Balance emphasis** - Ensure the most important stories, people, and issues get appropriate weight
+5. **Update outdated information** - Fix anything that has changed since the stories were published
 
-2. **Use web search extensively** - You have up to 25 web searches. Use them to:
-   - Verify current positions/titles of all people mentioned
-   - Check if people are still in their roles or have moved
-   - Verify if ongoing issues have been resolved or updated
-   - Confirm institutional names and current status
-   - Check if any major developments have occurred since stories were published
-   - Verify contact information is current
+USE WEB SEARCH FOR:
+- Verifying current positions/titles of key people mentioned
+- Checking if ongoing issues (lawsuits, policy debates, controversies) have been resolved
+- Looking up recent developments at key institutions (school boards, districts)
+- Finding contact information for important sources
+- Determining current relevance of story angles and themes
+- Assessing which people/institutions are most important to the beat TODAY
 
-3. **Document findings** - Create entries for:
-   - **Confirmed inaccuracies** - Facts that are definitely wrong with suggested corrections
-   - **Items to verify** - Things you couldn't fully verify that need manual checking
-   - **Suggested updates** - Information that may be outdated or could be improved
-   - **Verified facts** - Important facts you confirmed are still accurate (optional, for high-priority items)
-
-CRITICAL - PRESERVING PREVIOUS ENTRIES:
-- The previous fact-check report may already contain findings from earlier rounds
-- You MUST preserve ALL previous entries when adding new ones
-- APPEND your new findings to the existing lists - NEVER delete or replace previous entries
-- Each entry should be dated so the full history is preserved
-- Group findings by fact-check date, with newest entries at the bottom
-
-IMPORTANT: Be thorough. Check EVERY person, position, institution, and major claim. Use your web searches strategically to verify as many facts as possible.
+You have a maximum of 10 web searches - use them strategically to improve accuracy and relevance.
 </instructions>
 
+<word_count_guidance>
+Current word count: ~{word_count} words
+Target: Keep the beat book at or under 7,000 words
+
+**This is a critical checkpoint to manage word count.** If the beat book is approaching or exceeding 7,000 words, you MUST aggressively trim content. Be ruthless about cutting one-off stories and minor details.
+</word_count_guidance>
+
+<editorial_review_criteria>
+**What to EMPHASIZE:**
+- Major recurring themes and ongoing issues across multiple districts
+- Key decision-makers who are still active and relevant (superintendents, board chairs, influential advocates)
+- Story angles with lasting value and broad applicability
+- Institutions that appear frequently in coverage and shape regional policy
+- Systemic challenges facing Eastern Shore education
+
+**What to AGGRESSIVELY CUT:**
+- **One-off stories** that don't illustrate broader trends (e.g., a single school's new sign, a one-time event)
+- **Minor school-level developments** that don't reflect systemic issues
+- People who have left their positions or are no longer relevant
+- Resolved issues that are no longer active
+- **Tangential details** about individuals who aren't key decision-makers
+- Redundant or repetitive information
+- **Story ideas that are too narrow or time-bound** to help a reporter 6+ months from now
+- Details that don't help a new reporter understand the beat's major players and themes
+
+**Ask yourself:** Would a reporter who starts this job 6 months from now care about this detail? Does it represent a pattern or just a single incident?
+
+**What to VERIFY:**
+- Job titles and current positions
+- Status of ongoing legal/policy matters
+- Contact information accuracy
+- Recent changes at key institutions
+</editorial_review_criteria>
+
+<style_requirements>
+- Maintain direct, plain style - no flowery language
+- Keep narrative flow but be willing to reorganize for clarity
+- Ensure factual accuracy above all else
+- Note research findings where relevant (e.g., "As of [date], [person] holds [position]")
+</style_requirements>
+
 <output_format>
-Your response must be a fact-checking report in Markdown format. Structure it EXACTLY as follows:
+CRITICAL: Return ONLY the beat book content itself. Do not include:
+- Any preamble or introduction about what you're doing
+- Thinking aloud or process descriptions
+- Explanations of your research or changes
+- Phrases like "I'll conduct...", "Let me...", "Based on my research..."
+- Summary of findings or methodology
 
-# Fact-Check Report: Education Beat Book
-*Last updated: {current_date}*
+Your response must START IMMEDIATELY with the beat book title/header ("# Education Beat Book") and contain NOTHING else.
 
-## Items Requiring Attention
-
-### Confirmed Inaccuracies
-*Found during {current_date} review (Batch {batch_num}):*
-
-- **Location in beat book**: [Brief quote or description of where this appears]
-  - **Current claim**: [What the beat book currently says]
-  - **Correction needed**: [What it should say based on research]
-  - **Source**: [URL or brief description of verification source]
-
-[Repeat for each confirmed inaccuracy]
-
-*[If previous fact-checks exist, include their entries above with their dates]*
-
----
-
-### Items to Verify Manually
-*Flagged during {current_date} review (Batch {batch_num}):*
-
-- **Location in beat book**: [Brief quote or description]
-  - **Issue**: [What needs verification and why]
-  - **Suggestion**: [How to verify or what to look for]
-
-[Repeat for each item]
-
-*[If previous fact-checks exist, include their entries above with their dates]*
-
----
-
-### Suggested Updates
-*From {current_date} review (Batch {batch_num}):*
-
-- **Location in beat book**: [Brief quote or description]
-  - **Current status**: [What the beat book says]
-  - **Suggested update**: [Recommended change or addition]
-  - **Reason**: [Why this update is suggested]
-
-[Repeat for each suggestion]
-
-*[If previous fact-checks exist, include their entries above with their dates]*
-
----
-
-## Summary Statistics
-
-- **Web searches conducted this round**: [number]
-- **Confirmed inaccuracies found**: [number]
-- **Items flagged for verification**: [number]
-- **Updates suggested**: [number]
-
----
-
-*Note: This is a living document. Each fact-checking checkpoint adds new findings while preserving all previous entries.*
-
-CRITICAL: 
-- Do NOT include any preamble or meta-commentary before the report
-- Start IMMEDIATELY with "# Fact-Check Report: Education Beat Book"
-- PRESERVE all previous entries from earlier fact-checking rounds
-- ADD new findings organized by the current date
-- Be specific about locations in the beat book so items can be found easily
+The complete reviewed and refined beat book should be:
+- Fact-checked and accurate
+- Balanced with appropriate emphasis on important elements
+- Trimmed of irrelevant or outdated information
+- Updated with research findings where applicable
 </output_format>"""
 
 
 INITIAL_BEAT_BOOK = """# Education Beat Book - Easton Star-Democrat
-## Caroline County, Maryland
+## Maryland's Eastern Shore
 
-This guide covers the education beat in Caroline County, Maryland, focusing on the schools, institutions, and key players that shape local education coverage."""
+This guide covers the education beat for Maryland's Eastern Shore, focusing on the school districts, institutions, and key players that shape local education coverage."""
 
 
 INITIAL_REFINED_BEAT_BOOK = """# Education Beat Book - Easton Star-Democrat
-## Caroline County, Maryland
+## Maryland's Eastern Shore
 
-This guide covers the education beat in Caroline County, Maryland, focusing on the schools, institutions, and key players that shape local education coverage."""
-
-
-def search_caroline_county_info():
-    """
-    Use Claude Sonnet 4.5 with web search to gather current information about
-    Caroline County, Maryland - focusing on population and education statistics.
-    
-    This function is called once per script run to gather contextual information
-    that will be appended to the beat book.
-    
-    Returns:
-        String containing formatted statistics, or None if search failed
-    """
-    prompt = """Search the web for current information about Caroline County, Maryland and compile a reference report with the following statistics:
-
-**Population Statistics:**
-- Current population estimate
-- Population trends (growing/declining)
-- Demographics breakdown if available
-
-**Education Statistics:**
-- Number of public schools in the county
-- Number of students enrolled in the school system
-- Student-to-teacher ratios
-- Graduation rates
-- Any notable education rankings or achievements
-- School district name and organizational structure
-- Number of teachers/staff
-
-CRITICAL FORMATTING REQUIREMENTS:
-1. Your response will be inserted directly into a markdown document. It must be clean, polished, and ready for publication.
-2. Include ONLY the two category headings and bullet-point statistics - nothing else.
-3. Start immediately with "**Population Statistics:**" - no preamble, introduction, or commentary.
-4. Do NOT include any meta-commentary about your search process, clarifications, or explanations.
-5. Each fact must include an inline citation: "Statistic description ([source](URL))"
-6. If you encounter ambiguity (e.g., multiple Caroline Counties), silently resolve it by using context clues (Maryland vs other states) and proceed with the correct data.
-
-Your output will be directly appended to a professional document. Make it publication-ready."""
-
-    try:
-        print("\n" + "="*80)
-        print("🔍 GATHERING CAROLINE COUNTY BACKGROUND INFORMATION")
-        print("="*80)
-        print("Searching the web for population and education statistics...")
-        print("-"*80)
-        
-        client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-        
-        response = client.messages.create(
-            model="claude-sonnet-4-5-20250929",
-            max_tokens=4096,
-            messages=[{
-                "role": "user",
-                "content": prompt
-            }],
-            tools=[{
-                "type": "web_search_20250305",
-                "name": "web_search",
-                "max_uses": 5
-            }]
-        )
-        
-        # Extract text from response
-        result_text = ""
-        web_searches = 0
-        
-        for block in response.content:
-            if block.type == "text":
-                result_text += block.text
-            elif block.type == "server_tool_use":
-                web_searches += 1
-                if hasattr(block, 'input') and isinstance(block.input, dict):
-                    query = block.input.get('query', 'N/A')
-                    print(f"  🔎 Web search {web_searches}: {query[:80]}{'...' if len(query) > 80 else ''}")
-        
-        result_text = result_text.strip()
-        
-        print(f"\n✅ Web search complete")
-        print(f"  • Searches performed: {web_searches}")
-        print(f"  • Response length: {len(result_text)} characters")
-        print("="*80 + "\n")
-        
-        return result_text
-        
-    except Exception as e:
-        print(f"\n❌ ERROR: Failed to gather Caroline County information: {e}")
-        print("="*80 + "\n")
-        return None
-
-
-def strip_quick_stats_section(beat_book_text):
-    """
-    Remove the Quick Statistics section from beat book text if it exists.
-    This allows us to append a fresh version each time.
-    
-    Args:
-        beat_book_text: The beat book text that may contain a Quick Statistics section
-        
-    Returns:
-        Beat book text without the Quick Statistics section
-    """
-    # Look for the Quick Statistics section marker
-    section_marker = "## Quick Statistics: Caroline County, Maryland"
-    
-    if section_marker in beat_book_text:
-        # Find the position of the section marker
-        # Look for the preceding separator (---)
-        separator = "\n\n---\n\n"
-        
-        # Try to find the separator before the Quick Statistics section
-        parts = beat_book_text.split(separator + section_marker)
-        if len(parts) == 2:
-            # Return just the first part (everything before the Quick Statistics)
-            return parts[0].rstrip()
-        
-        # Fallback: just remove from the section marker onward
-        parts = beat_book_text.split(section_marker)
-        if len(parts) == 2:
-            return parts[0].rstrip()
-    
-    return beat_book_text
-
-
-def append_quick_stats_section(beat_book_text, caroline_county_info):
-    """
-    Append the Quick Statistics section to the beat book.
-    First strips any existing Quick Statistics section to avoid duplicates.
-    
-    Args:
-        beat_book_text: The beat book text
-        caroline_county_info: The Caroline County statistics text from web search
-        
-    Returns:
-        Beat book text with Quick Statistics section appended
-    """
-    if not caroline_county_info:
-        return beat_book_text
-    
-    # First, remove any existing Quick Statistics section
-    clean_text = strip_quick_stats_section(beat_book_text)
-    
-    # Now append the fresh Quick Statistics section
-    quick_stats_section = f"\n\n---\n\n## Quick Statistics: Caroline County, Maryland\n\n{caroline_county_info}"
-    
-    return clean_text + quick_stats_section
+This guide covers the education beat for Maryland's Eastern Shore, focusing on the school districts, institutions, and key players that shape local education coverage."""
 
 
 def load_state(state_file):
@@ -490,15 +311,13 @@ def load_state(state_file):
         'refined_beat_book': INITIAL_REFINED_BEAT_BOOK,
         'processed_indices': [],
         'batch_num': 0,
-        'total_batches': 0,
-        'caroline_county_info': None,
-        'fact_check_report': ''
+        'total_batches': 0
     }
 
 
 def refine_with_claude(previous_refined, latest_groq, batch_num, total_batches, processed_count, total_stories):
     """
-    Use Claude Sonnet 4.5 to refine the beat book by comparing previous refined version
+    Use Claude Haiku 4.5 to refine the beat book by comparing previous refined version
     with the latest Groq version.
     
     Args:
@@ -544,12 +363,12 @@ def refine_with_claude(previous_refined, latest_groq, batch_num, total_batches, 
     )
     
     try:
-        print("Refining with Claude Sonnet 4.5...")
+        print("Refining with Claude Haiku 4.5...")
         
         client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
         
         response = client.messages.create(
-            model="claude-sonnet-4-5-20250929",
+            model="claude-haiku-4-5-20251001",
             max_tokens=16000,
             temperature=0.7,
             messages=[{
@@ -577,25 +396,27 @@ def refine_with_claude(previous_refined, latest_groq, batch_num, total_batches, 
         return None
 
 
-def review_with_claude(current_refined, previous_fact_check, batch_num, total_batches, processed_count, total_stories):
+def review_with_claude(current_refined, batch_num, total_batches, processed_count, total_stories):
     """
-    Use Claude Sonnet 4.5 with web search to fact-check the beat book.
-    This is done every 10 batches to verify facts and create a report of findings.
+    Use Claude Haiku 4.5 with web search to comprehensively review the beat book.
+    This is done every 10 batches to fact-check, assess importance, and trim excess.
     
     Args:
         current_refined: Current refined beat book text
-        previous_fact_check: Previous fact-check report text
         batch_num: Current batch number
         total_batches: Total number of batches
         processed_count: Number of stories processed so far
         total_stories: Total number of stories in dataset
         
     Returns:
-        Fact-check report text, or None if review failed
+        Reviewed beat book text, or None if review failed
     """
     current_date = datetime.now().strftime("%B %d, %Y")
     progress_percentage = (processed_count / total_stories) * 100
     remaining_stories = total_stories - processed_count
+    
+    # Calculate approximate word count of current refined beat book
+    word_count = len(current_refined.split())
     
     prompt_text = CLAUDE_REVIEW_PROMPT.format(
         current_date=current_date,
@@ -605,31 +426,31 @@ def review_with_claude(current_refined, previous_fact_check, batch_num, total_ba
         total_stories=total_stories,
         remaining_stories=remaining_stories,
         progress_percentage=progress_percentage,
-        current_refined=current_refined,
-        previous_fact_check=previous_fact_check if previous_fact_check else "No previous fact-check report."
+        word_count=word_count,
+        current_refined=current_refined
     )
     
     try:
         print("\n" + "="*80)
-        print("🔍 FACT-CHECKING CHECKPOINT")
+        print("🔍 COMPREHENSIVE REVIEW CHECKPOINT")
         print("="*80)
         print(f"📊 Progress: {progress_percentage:.1f}% ({processed_count}/{total_stories} stories)")
         print(f"📦 Batch: {batch_num}/{total_batches}")
         print(f"📝 Current beat book size: {len(current_refined)} characters, ~{len(current_refined.split())} words")
-        print(f"🔧 Initiating Claude Sonnet 4.5 fact-checking with web search...")
+        print(f"🔧 Initiating Claude Haiku 4.5 review with web search capability...")
         print("-"*80)
         
         client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
         
-        print("⏳ Sending request to Claude for fact-checking...")
+        print("⏳ Sending request to Claude...")
         response = client.messages.create(
-            model="claude-sonnet-4-5-20250929",
+            model="claude-haiku-4-5-20251001",
             max_tokens=16000,
-            temperature=0.3,  # Lower temperature for fact-checking accuracy
+            temperature=0.7,
             tools=[{
                 "type": "web_search_20250305",
                 "name": "web_search",
-                "max_uses": 25  # Increased limit for thorough fact-checking
+                "max_uses": 10
             }],
             messages=[{
                 "role": "user",
@@ -640,58 +461,38 @@ def review_with_claude(current_refined, previous_fact_check, batch_num, total_ba
         print(f"✅ Response received from Claude")
         print(f"📊 Response stats: {response.usage.input_tokens} input tokens, {response.usage.output_tokens} output tokens")
         
-        # Track tool usage and searches performed
+        # Track tool usage
         web_searches = 0
-        search_queries = []
-        print("\n🔍 Fact-checking web searches performed:")
+        print("\n🔍 Processing response blocks:")
         
-        # Extract text from response and log all tool use
+        # Extract text from response and log tool use
         result_text = ""
         for i, block in enumerate(response.content):
             if block.type == "text":
                 result_text += block.text
+                print(f"  📄 Block {i+1}: Text content ({len(block.text)} chars)")
             elif block.type == "tool_use":
                 web_searches += 1
                 tool_name = block.name
+                print(f"  🔎 Block {i+1}: Tool use - {tool_name}")
                 if hasattr(block, 'input') and isinstance(block.input, dict):
                     query = block.input.get('query', 'N/A')
-                    search_queries.append(query)
-                    print(f"  🔎 Search {web_searches}: {query}")
+                    print(f"      Query: {query[:100]}{'...' if len(query) > 100 else ''}")
         
         result_text = result_text.strip()
         
-        # Extract summary statistics if present
-        inaccuracies = "N/A"
-        items_flagged = "N/A"
-        suggestions = "N/A"
-        
-        if "Confirmed inaccuracies found:" in result_text:
-            match = re.search(r'Confirmed inaccuracies found:\*\*\s*(\d+)', result_text)
-            if match:
-                inaccuracies = match.group(1)
-        
-        if "Items flagged for verification:" in result_text:
-            match = re.search(r'Items flagged for verification:\*\*\s*(\d+)', result_text)
-            if match:
-                items_flagged = match.group(1)
-        
-        if "Updates suggested:" in result_text:
-            match = re.search(r'Updates suggested:\*\*\s*(\d+)', result_text)
-            if match:
-                suggestions = match.group(1)
-        
-        print(f"\n📈 Fact-checking complete:")
-        print(f"  • Web searches performed: {web_searches}/25")
-        print(f"  • Confirmed inaccuracies: {inaccuracies}")
-        print(f"  • Items flagged for verification: {items_flagged}")
-        print(f"  • Updates suggested: {suggestions}")
-        print(f"  • Report size: {len(result_text)} characters, ~{len(result_text.split())} words")
+        print(f"\n📈 Review complete:")
+        print(f"  • Web searches performed: {web_searches}")
+        print(f"  • Reviewed beat book size: {len(result_text)} characters, ~{len(result_text.split())} words")
+        size_change = len(result_text) - len(current_refined)
+        change_pct = (size_change / len(current_refined) * 100) if current_refined else 0
+        print(f"  • Size change: {size_change:+d} chars ({change_pct:+.1f}%)")
         print("="*80 + "\n")
         
         return result_text
         
     except Exception as e:
-        print(f"\n❌ ERROR: Unexpected error during Claude fact-checking review: {e}")
+        print(f"\n❌ ERROR: Unexpected error during Claude review: {e}")
         print("="*80 + "\n")
         return None
 
@@ -703,18 +504,8 @@ def save_state(state_file, state):
     print(f"State saved to {state_file}")
 
 
-def save_beat_book(beat_book_file, beat_book_text, caroline_county_info=None):
-    """Save the current beat book to a separate file.
-    
-    Args:
-        beat_book_file: Path to the beat book file
-        beat_book_text: The beat book content
-        caroline_county_info: Optional Caroline County statistics to append
-    """
-    # If Caroline County info is provided and this is a refined beat book, append it
-    if caroline_county_info and 'refined' in beat_book_file:
-        beat_book_text = append_quick_stats_section(beat_book_text, caroline_county_info)
-    
+def save_beat_book(beat_book_file, beat_book_text):
+    """Save the current beat book to a separate file."""
     with open(beat_book_file, 'w', encoding='utf-8') as f:
         f.write(beat_book_text)
     print(f"Beat book saved to {beat_book_file}")
@@ -892,7 +683,7 @@ def update_beat_book(current_beat_book, stories_batch, batch_num, total_batches,
     return None
 
 
-def build_beat_book(input_file, state_file, beat_book_file, refined_beat_book_file, fact_check_file, batch_size=20, delay=2):
+def build_beat_book(input_file, state_file, beat_book_file, refined_beat_book_file, batch_size=20, delay=2):
     """
     Main function to iteratively build the beat book using Groq and refine with Claude.
     
@@ -901,7 +692,6 @@ def build_beat_book(input_file, state_file, beat_book_file, refined_beat_book_fi
         state_file: Path to save state between runs
         beat_book_file: Path to save the Groq beat book
         refined_beat_book_file: Path to save the Claude refined beat book
-        fact_check_file: Path to save the fact-check report
         batch_size: Number of stories per batch
         delay: Seconds to wait between API calls
     """
@@ -915,35 +705,13 @@ def build_beat_book(input_file, state_file, beat_book_file, refined_beat_book_fi
     # Load previous state if exists
     state = load_state(state_file)
     
-    # Gather Caroline County information once per run if not already cached
-    if state.get('caroline_county_info') is None:
-        print("\nGathering background information about Caroline County...")
-        caroline_info = search_caroline_county_info()
-        if caroline_info:
-            state['caroline_county_info'] = caroline_info
-            # Save state immediately after gathering this info
-            save_state(state_file, state)
-        else:
-            print("⚠ Warning: Failed to gather Caroline County information. Continuing without it.")
-    else:
-        print("\n✓ Using cached Caroline County information from previous run")
-    
     # Create list of indices we haven't processed yet
     total_indices = list(range(len(all_stories)))
     unprocessed_indices = [i for i in total_indices if i not in state['processed_indices']]
     
     if not unprocessed_indices:
         print("\n✓ All stories have been processed!")
-        
-        # Save final versions with Quick Statistics appended
-        save_beat_book(beat_book_file, state['beat_book'])
-        save_beat_book(refined_beat_book_file, state['refined_beat_book'], state.get('caroline_county_info'))
-        save_state(state_file, state)
-        
         print(f"Final beat book saved to {beat_book_file}")
-        print(f"Final refined beat book saved to {refined_beat_book_file}")
-        if state.get('caroline_county_info'):
-            print("✓ Quick Statistics section included in refined beat book")
         return
     
     # Calculate total batches
@@ -1037,28 +805,27 @@ def build_beat_book(input_file, state_file, beat_book_file, refined_beat_book_fi
         else:
             # Update refined beat book in state
             state['refined_beat_book'] = refined_beat_book
-            save_beat_book(refined_beat_book_file, state['refined_beat_book'], state.get('caroline_county_info'))
+            save_beat_book(refined_beat_book_file, state['refined_beat_book'])
         
         # Check if this is a checkpoint batch (every 10 batches)
         is_checkpoint = (current_batch_num % 10 == 0)
         
         if is_checkpoint:
             print(f"\n{'='*60}")
-            print(f"🔍 FACT-CHECKING CHECKPOINT - Batch {current_batch_num}")
+            print(f"🔍 CHECKPOINT REVIEW - Batch {current_batch_num}")
             print(f"{'='*60}")
             
             review_retry_count = 0
-            fact_check_report = None
+            reviewed_beat_book = None
             
-            while review_retry_count < max_retries and fact_check_report is None:
+            while review_retry_count < max_retries and reviewed_beat_book is None:
                 if review_retry_count > 0:
                     wait_time = delay * (2 ** review_retry_count)
                     print(f"Retry {review_retry_count}/{max_retries} - waiting {wait_time}s before retry...")
                     time.sleep(wait_time)
                 
-                fact_check_report = review_with_claude(
+                reviewed_beat_book = review_with_claude(
                     state['refined_beat_book'],
-                    state.get('fact_check_report', ''),
                     current_batch_num,
                     total_batches,
                     len(state['processed_indices']),
@@ -1066,18 +833,14 @@ def build_beat_book(input_file, state_file, beat_book_file, refined_beat_book_fi
                 )
                 review_retry_count += 1
             
-            if fact_check_report is None:
-                print(f"\n⚠ Failed checkpoint fact-checking after {max_retries} retries")
-                print(f"Continuing without updating fact-check report...")
+            if reviewed_beat_book is None:
+                print(f"\n⚠ Failed checkpoint review after {max_retries} retries")
+                print(f"Keeping current refined version and continuing...")
             else:
-                # Update fact-check report in state and save to file
-                state['fact_check_report'] = fact_check_report
-                
-                # Save the fact-check report to its own file
-                with open(fact_check_file, 'w', encoding='utf-8') as f:
-                    f.write(fact_check_report)
-                
-                print(f"✓ Fact-checking checkpoint complete - report saved to {fact_check_file}")
+                # Update refined beat book with reviewed version
+                state['refined_beat_book'] = reviewed_beat_book
+                save_beat_book(refined_beat_book_file, state['refined_beat_book'])
+                print(f"✓ Checkpoint review complete - beat book fact-checked and balanced")
         
         # Save state after each successful batch
         save_state(state_file, state)
@@ -1092,16 +855,8 @@ def build_beat_book(input_file, state_file, beat_book_file, refined_beat_book_fi
     print(f"\n{'='*60}")
     print(f"✓ COMPLETE! All {len(all_stories)} stories processed!")
     print(f"{'='*60}")
-    
-    # Save final versions with Quick Statistics appended
-    save_beat_book(beat_book_file, state['beat_book'])
-    save_beat_book(refined_beat_book_file, state['refined_beat_book'], state.get('caroline_county_info'))
-    save_state(state_file, state)
-    
     print(f"Groq beat book saved to: {beat_book_file}")
     print(f"Claude refined beat book saved to: {refined_beat_book_file}")
-    if state.get('caroline_county_info'):
-        print("✓ Quick Statistics section included in refined beat book")
     print(f"Total batches processed: {state['batch_num']}")
 
 
@@ -1128,11 +883,6 @@ if __name__ == '__main__':
         '--refined-output',
         default='education_beat_book_refined.md',
         help='Output file for Claude refined beat book (default: education_beat_book_refined.md)'
-    )
-    parser.add_argument(
-        '--fact-check',
-        default='education_beat_book_fact_check.md',
-        help='Output file for fact-check report (default: education_beat_book_fact_check.md)'
     )
     parser.add_argument(
         '--batch-size',
@@ -1164,7 +914,6 @@ if __name__ == '__main__':
         args.state,
         args.output,
         args.refined_output,
-        args.fact_check,
         batch_size=args.batch_size,
         delay=args.delay
     )

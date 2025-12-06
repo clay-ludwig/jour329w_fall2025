@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Beat Expert</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="markdown-panel" id="markdown-content">
+            <!-- Markdown content will be loaded here -->
+            <div class="loading">Loading Beat Book...</div>
+        </div>
+        <div class="chat-panel">
+            <div class="chat-header">
+                <h2><i class="fas fa-robot"></i> Beat Expert AI</h2>
+                <button id="settings-btn" class="icon-btn"><i class="fas fa-cog"></i></button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message system">
+                    Hello! I'm your Education Beat Expert. I have access to the Education Beat Book. Ask me anything about it!
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <select id="model-select">
+                    <option value="gpt-5.1">GPT 5.1</option>
+                    <option value="claude-haiku-4.5">Claude Haiku 4.5</option>
+                    <option value="gemini-3-pro-preview">Gemini 3 Pro Preview</option>
+                </select>
+                <div class="input-wrapper">
+                    <textarea id="user-input" placeholder="Ask a question..."></textarea>
+                    <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>API Settings</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="openai-key">OpenAI API Key</label>
+                    <input type="password" id="openai-key" placeholder="sk-...">
+                </div>
+                <div class="form-group">
+                    <label for="anthropic-key">Anthropic API Key</label>
+                    <input type="password" id="anthropic-key" placeholder="sk-ant-...">
+                </div>
+                <div class="form-group">
+                    <label for="google-key">Google Gemini API Key</label>
+                    <input type="password" id="google-key" placeholder="AIza...">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-settings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

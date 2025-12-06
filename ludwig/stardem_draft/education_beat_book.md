@@ -1,28 +1,43 @@
-# Education Beat Book – East on Star‑Democrat  
-## Caroline County, Maryland  
-
-**Purpose:** This living guide equips reporters with the background, contacts, themes, and story ideas needed to cover education in Caroline County. It is continually expanded as new reporting emerges.
+# Caroline County Education Beat Book  
+*Easton Star‑Democrat – Education Beat (Caroline County, MD)*  
 
 ---  
 
-## 1. Quick Reference – Core Institutions  
+## 1. Overview  
 
-| Institution | Primary Contact (when known) | Scope / Notes |
-|-------------|-----------------------------|---------------|
-| **Caroline County Public Schools (CCPS)** | **Superintendent – Dr. Derek Simmons**  <br> **Director of Operations – Bill Mengel** (presented FY‑2026 capital plan, 27 Nov 2024) | Operates all public K‑12 schools in the county. |
-| **Caroline County Board of Education** | **Chair – (identify current chair)** <br> **Board Members (2024‑25)**: <br> • Donna DiGiacomo (retired teacher) <br> • Mark Jones – Vice President <br> • Rick Barton – President <br> • [Other members – see County Board minutes] | Governs policy, budget, curriculum decisions. Two seats are up for election in 2024; District 2 will be decided in the General Election because fewer than three candidates filed. |
-| **Caroline County Commissioners** | **President – Travis Breeding** (requested regular updates on middle‑school feasibility, 27 Nov 2024) <br> **Other Commissioners – see County website** | Approves county‑wide capital‑improvement funding; key partner for large school‑building projects. |
-| **Caroline County Public Library** | Director – *(name to be confirmed)* <br> **Program Coordinator – (Read to Me Program contact, name TBD)** | Supports literacy, summer reading, adult education; partner on “One Maryland One Book.” Receives annual donations from the Imagination Library program (e.g., $1,450 check presented Aug 5 2025). **New: “Read to Me” therapy‑dog literacy program** pairs children struggling to read with certified therapy dogs and handlers, operating out of the library and serving classroom visits when permitted. Co‑sponsor of community‑history events (e.g., Anna Douglass lecture, 11/29/2023). |
-| **Caroline County Historical Society** | Director – *(name to be confirmed)* | Partner on local‑history programming, digitization projects, and public lectures (e.g., Anna Douglass presentation, 11/29/2023). |
-| **Caroline County Higher‑Ed Partners** | **Chesapeake College – Eastern Shore Campus** (DEI Director — **LaSella Hall**) <br> **Thomas Hayman** – QACPS teacher & coordinator of Upper Shore Regional History Day (partner for Caroline student competitions) <br> **Larry Porter – Vice President, Caroline County Commission** (key decision‑maker for local funding of regional post‑secondary projects) | Dual‑enrollment, workforce‑training, DEI and student‑union programs that serve Caroline students. Also hosts the Upper Shore Regional History Day (see **Student Enrichment & Competition Programs** section). |
-| **Chesapeake College – Wye Mills Campus (regional hub)** | **President – (name to be confirmed)** <br> **Workforce Development Liaison – (name TBD)** | Only Maryland community college serving five support counties, including Caroline. Recent focus on skilled‑trades labs, a mobile welding trailer, and state‑level attention (Gov. Wes Moore, Lt. Gov. Aruna Miller, Secretary Sanjay Rai visited April 2025). Ranked 2nd in the state by the Federal Reserve Bank of Richmond (2024‑25). |
-| **Technical Center Project (Chesapeake College)** | **President – Cliff Coppersmith** (project champion) <br> **Larry Porter – Vice President, Caroline County Commission** (local funding advocate) | A proposed 90,000‑sq‑ft technical center (≈52,000 sq ft assignable space) to house electrical, welding, HVAC, culinary, skilled‑office, marine and construction‑trade programs. State would fund 75 % of capital costs; each participating county (including Caroline) must decide on a Letter of Intent to cover the remaining 25 % (≈$19.75 M). Decision deadline: Sept 28, 2023 meeting with the Maryland Department of Budget and Management; construction slated for 2026. Ongoing debate over local fiscal commitment vs. workforce benefits. |
-| **Parent & Community Groups** | Moms for Liberty (local chapter), PTA leaders, **Read to Me Program volunteers** (therapy‑dog handlers) | Frequently host debates, advocacy events, and innovative literacy outreach. |
-| **Rotary Club of Denton** | **Sue Simmons** – Event Chair (Rotarian) | Sponsors the annual **Youth Career Exploration Fair** for CCPS 10th‑graders; provides venue, business‑mentor network, and community‑service funding. |
-| **Upper Shore Workforce Investment Board** | **Deborah Boulden** – Youth Outreach Coordinator | Provides career‑readiness workshops (e.g., “How To Rock a Job Interview”) and connects students to regional apprenticeship pipelines. |
-| **Caroline Career & Technology Center** | **Lindsey McCormick** – Director of College & Career (CCPS) | Coordinates dual‑enrollment, technical‑education pathways, and partnerships with local employers; co‑organizer of the Rotary career fair. |
-| **Maryland Rural Development Cooperation (MRDC)** | **Charles Huester** – Executive Director | Operates the **Early Head Start** program for Caroline (and Kent & Cecil) counties; currently facing a funding gap that will end the program on Sept 2 2025. |
-| **Ridgely Elementary School** | **Principal – (identify current principal)** | One of CCPS’s nine elementary schools; recent academic‑competition success (county spelling‑bee champion, 2023). |
-| **Colonel Richardson Elementary School** | Principal — (identify current principal) | One of CCPS’s nine elementary schools; recent student‑roster story (June 2 2025) highlights large, diverse enrollment. |
-| **Denton Elementary School** | **Principal – Dr. Sarah Crebs‑Oberdorf** (earned doctorate Jan 2024) <br> **Assistant Principal – Lindsay Grow** (newly mentioned) | Recognized for research on race & reading instruction; former special‑ed teacher and assistant principal at Ridgely. **First‑day‑of‑school coverage (Sept 2 2025)** noted. |
-| **Chesapeake Forum (regional nonprofit)** | **Board of Directors – Doug Holly** (joined Aug 2023
+Caroline County’s public schools serve a predominantly rural population across 12 elementary schools, 2 middle schools, and 1 high school (Caroline High). The county is overseaw by the **Caroline County Board of Education** and the **Caroline County Public Schools (CCPS) Administration**, led by Superintendent **Dr. Derek Simmons** (as of February 2024; previously Dr. Christopher Parker).  
+
+Recent coverage shows modest but steady gains on the state’s **Maryland College and Career‑Ready Assessment Program (MCAP)**, while historical narratives highlight the limited Catholic‑school options that Caroline families once relied on outside the county. New college‑recognition stories (2023‑2025) demonstrate a growing pipeline of Caroline students achieving academic honors at four‑year institutions, adding a fresh angle to the beat.  
+
+In the past year, several additional strands have emerged:  
+
+* **Transition‑to‑work programs for students with disabilities** that link school‑based services with regional employers (Upper Shore Workforce Investment Board).  
+* **Community‑driven school‑spirit events** that illustrate deep partnerships between schools, the town government, and local businesses (Ridgely Elementary’s Halloween parade).  
+* **STEM enrichment partnerships** that bring high‑value technology kits and professional‑development support to middle‑school classrooms (Lockerman Middle School’s Cal Ripken Sr. Foundation donation).  
+* **Humanities & History Enrichment:** The **Upper Shore Regional History Day** competition, funded by Maryland Humanities and hosted at Chesapeake College, now regularly draws Caroline middle‑ and high‑school teams.  
+* **Student Governance:** Two **non‑voting student board representatives** (2024‑25: Vanessa Odidika and Kadeen Belle) provide a formal voice for youth in district‑wide decision‑making.  
+* **Crisis & Grief Support:** The death of Sandy Hill Elementary special‑education teacher **Elizabeth “Lizzi” Cockey** (May 2024) highlighted CCPS’s coordinated mental‑health response and memorial practices.  
+* **Material‑Need Support & Community Partnerships:** The **third‑annual Backpack Giveaway** (Sept 2023) by **CASA of Caroline**, **Caroline Pride**, and the **Town of Goldsboro** distributed 110 backpacks to students in the county’s northern region.  
+* **Facilities & Capital Projects:** New gender‑separated restroom facilities at the outdoor athletic complexes of North Caroline High School and Colonel Richardson High School, funded in FY 2025 and overseen by County Commissioners President **Travis Breeding**, CCPS Director of Operations **Bill Mengel**, and County Public Works Director **Robin Eaton**.  
+* **Out‑of‑School Enrichment & Demographic Shifts:** **Oxford Kids Camp** (now led by director **Elizabeth Wainwright**) serves up to 250 children each summer, reflecting changing family demographics in the Oxford area.  
+* **Student Homelessness & Housing Instability:** McKinney‑Vento data (early 2025) shows **2.2 %** of Caroline K‑12 students experiencing homelessness, prompting targeted transportation, meal, and counseling supports.  
+
+**New Development – Youth Apprenticeship Program:** In February 2024, CCPS signed four youth‑apprenticeship agreements (three in the Technology Department, one in the Chesapeake Culinary Arts Center). The program is coordinated by **Eric Cook**, CCPS Youth Apprenticeship Coordinator, and supported by **Lindsey McCormick**, Director of College and Career Readiness, along with counselors Ann Ferkler, Jacqueline Holtzman, and Jennifer Reed. State‑level partners from the Maryland State Department of Education (Tracy Kyttle, Jennifer Griffin, Pamela Clay) attended the signing, underscoring a growing alignment between county‑wide career pathways and state apprenticeship standards.  
+
+These developments broaden the beat beyond test scores to include workforce readiness, disability services, community engagement, hands‑on STEM and humanities learning, structured student representation, mental‑health and crisis‑response infrastructure, material‑need interventions, capital‑project investments, private‑sector youth programs, and housing‑instability challenges.  
+
+---  
+
+## 2. Core Institutions & Contacts  
+
+| Institution | Role / Relevance | Primary Contact (if listed) | Notes |
+|-------------|------------------|-----------------------------|-------|
+| **Caroline County Public Schools (CCPS)** | K‑12 district; policy, curriculum, budgeting | **Dr. Derek Simmons**, Superintendent (CCPS Office, 555‑xxx‑xxxx) | Replaced Dr. Christopher Parker as of early 2024 |
+| **Caroline County Board of Education** | Governs CCPS policy, budget, strategic direction | Board Chair **[Name]** (phone/email) |  |
+| **CCPS Youth Apprenticeship Program** | Provides apprenticeship pathways in technology, culinary arts, and other career‑technical areas | **Eric Cook**, Youth Apprenticeship Coordinator – **cook.eric@ccpsstaff.org** | Coordinates agreements with local employers and MDDOE apprenticeship office |
+| **Director of College & Career Readiness** | Oversees CTE, college‑and‑career counseling | **Lindsey McCormick** (phone/email) | Key partner for apprenticeship and dual‑enrollment initiatives |
+| **CCPS Technology Department** | Hosts three of the four new apprenticeships | **Jason Wielgosz**, Supervisor – (phone/email) | Works closely with apprenticeship coordinator |
+| **Chesapeake Culinary Arts Center** | Hosts culinary‑arts apprenticeship | **Chef David Murray**, Food Services – (phone/email) |  |
+| **Maryland State Department of Education – Apprenticeships Division** | State oversight, credentialing, partnership support | **Tracy Kyttle**, Director of Apprenticeships; **Jennifer Griffin**, Career Programs & Apprenticeship Specialist; **Pamela Clay**, CTE Associate – (phone/email) | Attended Feb 2024 apprenticeship signing |
+| **Upper Shore Workforce Investment Board** | Partners on disability transition‑to‑work programs | **[Contact]** (phone/email) |  |
+| **CASA of Caroline** | Provides material‑
