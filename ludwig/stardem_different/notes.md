@@ -19,7 +19,7 @@ To achieve this without sending any of the Star-Democrat's stories to frontier m
 
 *(The great thing about these local embeddings models is that they're both high-fidelity, from what I can tell, and very fast. Running the granular version of this script took about 15 minutes on my MacBook Pro with 16GB of RAM. Not too bad for processing every single sentence within every single article!)*
 
-I also generated embeddings for each sentence of the beat book itself, and asked Copilot to write the `md_to_beatbook.py` Python Script, which conducts a similarity check for each sentence in the beat book to find the most similarly-worded source article, and returns a similarity score for each one.
+I also generated embeddings for each sentence of the beat book itself, and asked Copilot to write the `md_to_beatbook.py` Python Script, which conducts a similarity check for each sentence in the beat book to find the most similarly-worded sentence within each Star-Democrat article, and returns a similarity score for each one.
 
 To provide the source articles to the reader in an intuitive way, I decided to display our beat book as an HTML webpage. The page is deceivingly simple — it appears to contain a basic article-style layout, but it includes highlighted sentences that will open a readable copy of the "source" article they came from when clicked. I am able to adjust a `similarity` threshold in the Javascript code to determine how "easily" these links appear. If I set the threshold to 0, every single sentence would be hyperlinked (often to stories that weren't very similar to the sentence). In my testing, though, I found ~0.6 to be a good middle ground between over- and under-linking to source material.
 
