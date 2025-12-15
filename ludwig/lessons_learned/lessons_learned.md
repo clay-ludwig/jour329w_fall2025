@@ -9,9 +9,9 @@ Specifically, I've been able to see how truly "artificial" LLM intelligence is. 
 
 Several examples of this were shown at the start of our class, like the "name 20 turtle names" prompt, which almost always returns a list containing the names "Shelly" or "Shellby." This probabilistic behavior was also evident in the experiences we shared after our homework assignments, where the distribution of people who reported having good, "meh" or bad experiences with things like Copilot was always pretty evenly distributed.
 
-I also was struck by the Allen AI website you showed us a few weeks ago, which showed a "trace" of the LLM's thinking process back to its original training data. The fact that the "LLM speak" we've come to recognize may (i.e. "it's not x, it's y") be rooted in things as mundane as Amazon advertisements was really eye-opening for me, since it shows just how irrational and unintelligent these systems are (despite how much we tend to anthropomorphize them).
+I also was struck by the Allen AI website you showed us a few weeks ago, which showed a trace of the LLM's thinking process back to its original training data. The fact that the "LLM speak" we've come to recognize may (i.e. *it's not x, it's y*) be rooted in things as mundane as Amazon advertisements was really eye-opening for me, since it shows just how irrational and unintelligent these systems are (despite how much we tend to anthropomorphize them).
 
-I've read many debates online about whether intelligence can be "encoded" into language through LLMs. After this class, I sit squarely in the camp of people who think the answer to this question is "no."
+I've read many debates online about whether intelligence can be "encoded" into language through LLMs. After this class, I sit squarely in the camp of people who think the answer to this question is no.
 
 But somewhat paradoxically, I've also gained an even greater appreciation that these LLMs exist at all. They've been undeniably useful for us this semester, and I've gotten more confident (especially in the last few weeks) that a beat book is possible with today's models.
 
