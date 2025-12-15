@@ -1,0 +1,3 @@
+I gave this to the Llama 3.2 model using Ollama:
+
+"Summarize this article in 2-5 concise sentences, preserving only the main points, key names, dates, and places. Avoid repeating details or extra commentary. It's fine if your sentence structure isn't perfectly readable as long as it communicates the specific information perfectly."
