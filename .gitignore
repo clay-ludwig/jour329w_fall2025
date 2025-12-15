@@ -218,3 +218,4 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+ludwig/stardem_final/beatbook_viewer/embeddings_format/output/source_stories_embeddings.json
